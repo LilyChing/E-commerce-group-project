@@ -25,7 +25,7 @@ if (!$conn) {
 }
 
 // Prepare and bind
-$stmt = $conn->prepare("INSERT INTO MyGuests (cName, cNumber, cEmail, sName, sAddress, sCity, sCountry, sPostcode, payment) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+$stmt = $conn->prepare("INSERT INTO PurchaseData (cName, cNumber, cEmail, sName, sAddress, sCity, sCountry, sPostcode, payment) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
 $stmt->bind_param("sssssssss", $cName, $cNumber, $cEmail, $sName, $sAddress, $sCity, $sCountry, $sPostcode, $payment);
 
 if (mysqli_query($conn, $sql)) {
