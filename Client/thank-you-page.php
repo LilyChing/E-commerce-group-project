@@ -10,7 +10,7 @@ $subtotal = 0; //sum of products
 foreach ($items as $index => $item) {
   $quantity = 1;
   $price = $amounts[$index];
-  echo htmlspecialchars($item) . " x " . $quantity . " = $" . number_format($price * $quantity, 2) . "<br/><br/>";
+  echo htmlspecialchars($item) . " x " . $quantity . str_repeat('&nbsp;', 3)" = $" . number_format($price * $quantity, 2) . "<br/>";
   $subtotal += $price * $quantity;
 }
 
@@ -23,7 +23,7 @@ echo "Shipping".str_repeat('&nbsp;', 5)."$".number_format($shipping, 2)."<br/><b
  $total = $subtotal + $shipping;
   echo"<b>Total$</b>" . "<b>". str_repeat('&nbsp;', 5).number_format($total, 2) . "</b><br/><br/>";
 }
-else{echo "Shipping<br/><br/><br/><br/><br/><br/>"."$".0."<br/><br/>";
+else{echo "Shipping".str_repeat('&nbsp;', 5)."<b>$</b>" ."$".number_format(0, 2)."<br/><br/>";
     $total = $subtotal;
     echo"<b>Total</b>".str_repeat('&nbsp;', 5)."<b>$</b>" . "<b>".number_format($total, 2) . "</b><br/><br/>";}
 
