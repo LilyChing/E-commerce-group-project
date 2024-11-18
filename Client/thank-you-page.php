@@ -14,18 +14,18 @@ foreach ($items as $index => $item) {
   $subtotal += $price * $quantity;
 }
 
-echo "Subtotal<br/><br/><br/><br/><br/><br/>$". number_format($subtotal, 2)."<br/><br/>";
+echo "Subtotal".str_repeat('&nbsp;', 5)."$". number_format($subtotal, 2)."<br/><br/>";
 
 // Total amount
 
 if ($subtotal<300) {
-echo "Shipping<br/><br/><br/><br/><br/><br/>"."$".number_format($shipping, 2)."<br/><br/>";
+echo "Shipping".str_repeat('&nbsp;', 5)."$".number_format($shipping, 2)."<br/><br/>";
  $total = $subtotal + $shipping;
-  echo"<b>Total</b><br/>$" . "<b>".number_format($total, 2) . "</b><br/><br/>";
+  echo"<b>Total$</b>" . "<b>". str_repeat('&nbsp;', 5).number_format($total, 2) . "</b><br/><br/>";
 }
 else{echo "Shipping<br/><br/><br/><br/><br/><br/>"."$".0."<br/><br/>";
     $total = $subtotal;
-    echo"<b>Total</b><br/>$" . "<b>".number_format($total, 2) . "</b><br/><br/>";}
+    echo"<b>Total</b>".str_repeat('&nbsp;', 5)."<b>$</b>" . "<b>".number_format($total, 2) . "</b><br/><br/>";}
 
 echo "Thank you!";
 ?>
