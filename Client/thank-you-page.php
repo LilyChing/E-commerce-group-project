@@ -27,5 +27,5 @@ else{echo "Shipping".str_repeat('&nbsp;', 5)."<b>$</b>" ."$".number_format(0, 2)
     $total = $subtotal;
     echo"<b>Total</b>".str_repeat('&nbsp;', 5)."<b>$</b>" . "<b>".number_format($total, 2) . "</b><br/><br/>";}
 
-echo "Thank you!";
+echo "<h1>Thank you!</h1>";
 ?>
