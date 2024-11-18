@@ -21,10 +21,12 @@ echo "Subtotal".str_repeat('&nbsp;', 5)."$". number_format($subtotal, 2)."<br/><
 if ($subtotal<300) {
 echo "Shipping".str_repeat('&nbsp;', 5)."$".number_format($shipping, 2)."<br/><br/>";
  $total = $subtotal + $shipping;
+  echo"<hr/>";
   echo"<b>Total$</b>" . "<b>". str_repeat('&nbsp;', 5).number_format($total, 2) . "</b><br/><br/>";
 }
 else{echo "Shipping".str_repeat('&nbsp;', 5)."<b>$</b>" ."$".number_format(0, 2)."<br/><br/>";
     $total = $subtotal;
+    echo"<hr/>";
     echo"<b>Total</b>".str_repeat('&nbsp;', 5)."<b>$</b>" . "<b>".number_format($total, 2) . "</b><br/><br/>";}
 
 echo "<h1>Thank you!</h1>";
