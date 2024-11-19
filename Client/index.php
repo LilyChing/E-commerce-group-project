@@ -57,28 +57,41 @@
   <div class="container pt-5">
     <h2 class="h3 pb-3">Featured Tour</h2>
     <div class="row pb-4">
-      <div class="col">
-        <img src="./asset/HongKong.png" alt="" width="100%">
-      </div>
-      <div class="col">
-        <img src="./asset/Japan.png" alt="" width="100%">
-      </div>
+        <div class="col">
+          <a href="./tour.php">
+            <img src="./asset/HongKong.png" alt="" width="100%">
+          </a>
+        </div>
+        <div class="col">
+          <a href="./tour.php">
+            <img src="./asset/Japan.png" alt="" width="100%">
+          </a>
+        </div>
+      </a>
     </div>
     <div class="row pb-4">
-      <div class="col">
-        <img src="./asset/Italy.png" alt="" width="100%">
-      </div>
-      <div class="col">
-        <img src="./asset/Korea.png" alt="" width="100%">
-      </div>
+        <div class="col">
+          <a href="./tour.php">
+            <img src="./asset/Italy.png" alt="" width="100%">
+          </a>
+        </div>
+        <div class="col">
+          <a href="./tour.php">
+            <img src="./asset/Korea.png" alt="" width="100%">
+          </a>
+        </div>
     </div>
     <div class="row pb-4">
-      <div class="col">
-        <img src="./asset/Singapore.png" alt="" width="100%">
-      </div>
-      <div class="col">
-        <img src="./asset/Thailand.png" alt="" width="100%">
-      </div>
+        <div class="col">
+          <a href="./tour.php">
+            <img src="./asset/Singapore.png" alt="" width="100%">
+          </a>
+        </div>
+        <div class="col">
+          <a href="./tour.php">
+            <img src="./asset/Thailand.png" alt="" width="100%">
+          </a>
+        </div>
     </div>
   </div>
   <div class="container pt-5">
@@ -104,10 +117,14 @@
                   </svg>
                 </div>
               </div>
-              <img src="./asset/SIM_temp.png" class="card-img-top" alt="...">
+              <a href="./tour.php">
+                <img src="./asset/SIM_temp.png" class="card-img-top" alt="...">
+              </a>
             </div>
             <div class="card-body">
-              <h3 class=" h5 card-title">SIM Card - Singapore</h3>
+              <a href="./tour.php" class="text-black text-decoration-none">
+                <h3 class=" h5 card-title">SIM Card - Singapore</h3>
+              </a>
               <a class="h6 text-primary text-decoration-none" href="#">SIM Cards</a>
               <div class="operate d-flex mt-3 justify-content-between align-items-center">
                 <div class="price">
@@ -161,10 +178,14 @@
                   </svg>
                 </div>
               </div>
-              <img src="./asset/SIM_temp.png" class="card-img-top" alt="...">
+              <a href="./tour.php">
+                <img src="./asset/SIM_temp.png" class="card-img-top" alt="...">
+              </a>
             </div>
             <div class="card-body">
-              <h3 class=" h5 card-title">SIM Card - Singapore</h3>
+              <a href="./tour.php" class="text-black text-decoration-none">
+                <h3 class=" h5 card-title">SIM Card - Singapore</h3>
+              </a>
               <a class="h6 text-primary text-decoration-none" href="#">SIM Cards</a>
               <div class="operate d-flex mt-3 justify-content-between align-items-center">
                 <div class="price">
@@ -218,10 +239,14 @@
                   </svg>
                 </div>
               </div>
-              <img src="./asset/SIM_temp.png" class="card-img-top" alt="...">
+              <a href="./tour.php">
+                <img src="./asset/SIM_temp.png" class="card-img-top" alt="...">
+              </a>
             </div>
             <div class="card-body">
-              <h3 class=" h5 card-title">SIM Card - Singapore</h3>
+              <a href="./tour.php" class="text-black text-decoration-none">
+                <h3 class=" h5 card-title">SIM Card - Singapore</h3>
+              </a>
               <a class="h6 text-primary text-decoration-none" href="#">SIM Cards</a>
               <div class="operate d-flex mt-3 justify-content-between align-items-center">
                 <div class="price">
@@ -275,10 +300,14 @@
                   </svg>
                 </div>
               </div>
-              <img src="./asset/SIM_temp.png" class="card-img-top" alt="...">
+              <a href="./tour.php">
+                <img src="./asset/SIM_temp.png" class="card-img-top" alt="...">
+              </a>
             </div>
             <div class="card-body">
-              <h3 class=" h5 card-title">SIM Card - Singapore</h3>
+              <a href="./tour.php" class="text-black text-decoration-none">
+                <h3 class=" h5 card-title">SIM Card - Singapore</h3>
+              </a>
               <a class="h6 text-primary text-decoration-none" href="#">SIM Cards</a>
               <div class="operate d-flex mt-3 justify-content-between align-items-center">
                 <div class="price">
@@ -361,10 +390,14 @@
                   </svg>
                 </div>
               </div>
-              <img src="./asset/productTemp.png" class="card-img-top" alt="...">
+              <a href="#">
+                <img src="./asset/productTemp.png" class="card-img-top" alt="...">
+              </a>
             </div>
             <div class="card-body">
-              <h3 class=" h5 card-title">RIMOWA - Cabin</h3>
+              <a href="" class="text-black text-decoration-none">
+                <h3 class=" h5 card-title">RIMOWA - Cabin</h3>
+              </a>
               <a class="h6 text-primary text-decoration-none" href="#">SIM Cards</a>
               <div class="operate d-flex mt-3 justify-content-between align-items-center">
                 <div class="price">
@@ -418,10 +451,14 @@
                   </svg>
                 </div>
               </div>
-              <img src="./asset/productTemp.png" class="card-img-top" alt="...">
+              <a href="#">
+                <img src="./asset/productTemp.png" class="card-img-top" alt="...">
+              </a>
             </div>
             <div class="card-body">
-              <h3 class=" h5 card-title">RIMOWA - Cabin</h3>
+              <a href="" class="text-black text-decoration-none">
+                <h3 class=" h5 card-title">RIMOWA - Cabin</h3>
+              </a>
               <a class="h6 text-primary text-decoration-none" href="#">SIM Cards</a>
               <div class="operate d-flex mt-3 justify-content-between align-items-center">
                 <div class="price">
@@ -475,10 +512,14 @@
                   </svg>
                 </div>
               </div>
-              <img src="./asset/productTemp.png" class="card-img-top" alt="...">
+              <a href="#">
+                <img src="./asset/productTemp.png" class="card-img-top" alt="...">
+              </a>
             </div>
             <div class="card-body">
-              <h3 class=" h5 card-title">RIMOWA - Cabin</h3>
+              <a href="" class="text-black text-decoration-none">
+                <h3 class=" h5 card-title">RIMOWA - Cabin</h3>
+              </a>
               <a class="h6 text-primary text-decoration-none" href="#">SIM Cards</a>
               <div class="operate d-flex mt-3 justify-content-between align-items-center">
                 <div class="price">
@@ -532,10 +573,14 @@
                   </svg>
                 </div>
               </div>
-              <img src="./asset/productTemp.png" class="card-img-top" alt="...">
+              <a href="#">
+                <img src="./asset/productTemp.png" class="card-img-top" alt="...">
+              </a>
             </div>
             <div class="card-body">
-              <h3 class=" h5 card-title">RIMOWA - Cabin</h3>
+              <a href="" class="text-black text-decoration-none">
+                <h3 class=" h5 card-title">RIMOWA - Cabin</h3>
+              </a>
               <a class="h6 text-primary text-decoration-none" href="#">SIM Cards</a>
               <div class="operate d-flex mt-3 justify-content-between align-items-center">
                 <div class="price">
@@ -581,7 +626,9 @@
       <div class="col-3">
         <div class="card w-100 border border-0" style="width: 18rem;">
           <div class="position-relative">
-            <img src="./asset/trivago.png" class="card-img-top" alt="...">
+            <a href="https://www.trivago.hk/">
+              <img src="./asset/trivago.png" class="card-img-top" alt="...">
+            </a>
           </div>
           <div class="card-body">
             <h3 class=" h5 card-title">Trivageo</h3>
@@ -591,7 +638,9 @@
       <div class="col-3">
         <div class="card w-100 border border-0" style="width: 18rem;">
           <div class="position-relative">
-            <img src="./asset/bookingcom.png" class="card-img-top" alt="...">
+            <a href="https://www.booking.com/">
+              <img src="./asset/bookingcom.png" class="card-img-top" alt="...">
+            </a>
           </div>
           <div class="card-body">
             <h3 class=" h5 card-title">Booking.com</h3>
@@ -601,7 +650,9 @@
       <div class="col-3">
         <div class="card w-100 border border-0" style="width: 18rem;">
           <div class="position-relative">
-            <img src="./asset/hotelcom.png" class="card-img-top" alt="...">
+            <a href="https://www.hotels.com/">
+              <img src="./asset/hotelcom.png" class="card-img-top" alt="...">
+            </a>
           </div>
           <div class="card-body">
             <h3 class=" h5 card-title">Hotels.com</h3>
@@ -611,7 +662,9 @@
       <div class="col-3">
         <div class="card w-100 border border-0" style="width: 18rem;">
           <div class="position-relative">
-            <img src="./asset/agoda.png" class="card-img-top" alt="...">
+            <a href="https://www.agoda.com/">
+              <img src="./asset/agoda.png" class="card-img-top" alt="...">
+            </a>
           </div>
           <div class="card-body">
             <h3 class=" h5 card-title">Agoda</h3>
