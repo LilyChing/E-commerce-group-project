@@ -1,0 +1,10 @@
+.like_btn{
+  height: 20px;
+  width: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border: #EEEEEE;
+  border-radius: 100%;
+}
