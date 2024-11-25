@@ -1,4 +1,13 @@
-<?php session_start(); ?>
+<?php 
+  session_start(); 
+  $pages = (object) [
+    array('path' => 'index.php', 'name'=> 'Home'),
+    array('path' => 'about-us.php', 'name'=> 'About Us'),
+    array('path' => 'wifi-egg.php', 'name'=> 'WiFi Egg / SIM Cards'),
+    array('path' => 'tour.php', 'name'=> 'Travel Services'),
+    array('path' => 'travel-accessories.php', 'name'=> 'Travel Accessories'),
+  ];
+?>
 <!DOCTYPE html>
 <html>
 
@@ -7,11 +16,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" type="text/css" href="index.css">
 </head>
 
 <body>
   <!-- navBar -->
+  <nav class="navbar navbar-expand-lg " style="background: linear-gradient(135deg, #65ACFF, #ABD2FF)">
+    <div class="container">
+      <a class="navbar-brand" href="index.php">
+      <img src="./asset/logo_small.png" alt="logo" height="58">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <?php
+            foreach ($pages as $page) {
+              echo '<li class="nav-item">';
+              if(basename($_SERVER['PHP_SELF']) == $page['path']){
+                echo '<a class="nav-link text-white active" aria-current="page" ';
+              }else{
+                echo '<a class="nav-link text-white" ';
+              }
+              echo 'href="'.$page['path'].'">'.$page['name'].'</a></a>';
+            }
+          ?>
+        </ul>
+        <a>
+          <i class="bi bi-cart3" style="font-size: 2rem; color: white;"></i>
+        </a>
+      </div>
+    </div>
+  </nav>
+  <!-- index page body -->
   <div id="carouselExampleCaptions" class="carousel slide">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
