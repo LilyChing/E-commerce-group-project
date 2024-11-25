@@ -25,26 +25,25 @@
   <nav class="navbar navbar-expand-lg " style="background: linear-gradient(135deg, #65ACFF, #ABD2FF)">
     <div class="container">
       <a class="navbar-brand" href="index.php">
-      <img src="./asset/logo_small.png" alt="logo" height="58">
+        <img src="./asset/logo_small.png" alt="logo" height="58">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <ul class="navbar-nav gap-3 me-auto mb-2 mb-lg-0">
           <?php
             foreach ($pages as $page) {
-              echo '<li class="nav-item">';
+              echo '<li class="nav-item d-flex align-items-center">';
               if(basename($_SERVER['PHP_SELF']) == $page['path']){
-                echo '<a class="nav-link text-white active" aria-current="page" ';
+                echo '<a class="nav-link fw-bold active" aria-current="page" style="color: #FFE000;" href="'.$page['path'].'">'.$page['name'].'</a><img src="./asset/rubber-duck-yellow.png" alt="logo" height="20"></li>';
               }else{
-                echo '<a class="nav-link text-white" ';
+                echo '<a class="nav-link text-white" href="'.$page['path'].'">'.$page['name'].'</a><img src="./asset/rubber-duck-white.png" alt="logo" height="20"></li>';
               }
-              echo 'href="'.$page['path'].'">'.$page['name'].'</a></a>';
             }
           ?>
         </ul>
-        <a>
+        <a type="button" class="btn btn-link" href="shopping-cart.php" >
           <i class="bi bi-cart3" style="font-size: 2rem; color: white;"></i>
         </a>
       </div>
