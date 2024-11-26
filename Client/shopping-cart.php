@@ -61,9 +61,13 @@
     </div>
   </nav>
   <!-- Cart body -->
-   <div class="container d-flex">
-    <div>
-       fghhgfh
+   <div class="container">
+    <h1>Checkout</h1>
+    <div class="d-flex">
+      <!-- Left section -->
+      <div></div>
+      <!-- Right section -->
+      <div></div>
     </div>
    </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
