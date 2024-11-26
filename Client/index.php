@@ -7,6 +7,8 @@
     array('path' => 'tour.php', 'name'=> 'Travel Services'),
     array('path' => 'travel-accessories.php', 'name'=> 'Travel Accessories'),
   ];
+  // store session data
+  $_SESSION['productsInCart'] = 0;
 ?>
 <!DOCTYPE html>
 <html>
@@ -49,6 +51,12 @@
         </ul>
         <a type="button" class="btn btn-link" href="shopping-cart.php" >
           <i class="bi bi-cart3" style="font-size: 2rem; color: white;"></i>
+          <?php
+            if($_SESSION['productsInCart'] > 0){
+              echo '<span class="position-absolute translate-middle badge rounded-pill bg-danger">'.$_SESSION['productsInCart'];
+              echo '<span class="visually-hidden">Products in Cart</span></span>';
+            }
+          ?>
         </a>
       </div>
     </div>

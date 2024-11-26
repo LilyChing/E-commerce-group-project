@@ -3,3 +3,7 @@
   top: 0;
   z-index: 5;
 }
+
+.btn .badge{
+  top: 25px !important;
+}
