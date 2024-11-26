@@ -732,7 +732,7 @@
   </script>
 </body>
 <footer>
-    <img src="./asset/logo_small.png"/>
+    <img src="./asset/logo_small.png" />
     <table style="width:100%">
         <tr>
             <th align="left">Download apps </th>
@@ -742,13 +742,18 @@
             <th align="left">Contact Us</th>
         </tr>
         <tr>
-           <td rowspan="4"><img src="./asset/leadingduck.png"/></td>
+           <td rowspan="4"><img src="./asset/leadingduck.png" width="150px" height="150px"/></td>
            <td>Tour Service</td>
            <td>Order Details</td>
            <td>Support</td>
-           <td rowspan="4">Address<br/>Room 1201, 12/F, Polyu Hung Hom Bay<br/>
+           <td rowspan="4" td id="top">Address<br/>Room 1201, 12/F, Polyu Hung Hom Bay<br/>
             Campus, Hung Lok Road, Hung Hom,<br/>
-            Kowloon</td>
+            Kowloon<br/>
+            <br/>
+            Opening Hour:<br/>
+                Monday to Friday: 8:30 am - 5:30<br/>
+                Saturday, Sunday and Public holidays are closed
+        </td>
             <td>Hotline: (852) 3746 0900</td>
        </tr>
        <tr>
@@ -761,6 +766,7 @@
             <td>Travel Accessories</td>
            <td></td>
             <td>Privary Policy</td>
+            <td>WhatsApp: (852) 3746 0888</td>
          </tr>
         <tr>
             <td></td>
@@ -769,19 +775,7 @@
             <td>Email:  <a href="mailto:leading_duck102@outlook.com">leading_duck102@outlook.com</a>
             </td>
             </tr>
-        <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>Opening Hour:<br/>
-                Monday to Friday: 8:30 am - 5:30<br/>
-                Saturday, Sunday and Public holidays are closed
-                </td>
-                <td>WhatsApp: (852) 3746 0888</td>
-        </tr>
-
-        <tr>
+          <tr>
             <td><b> More About Us</b></td>
          </tr>
          <tr>
