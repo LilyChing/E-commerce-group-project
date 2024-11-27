@@ -62,12 +62,95 @@
   </nav>
   <!-- Cart body -->
    <div class="container">
-    <h1>Checkout</h1>
-    <div class="d-flex">
+    <h1 class="my-4">Checkout</h1>
+    <div class="row">
       <!-- Left section -->
-      <div></div>
+      <div class="col-12 col-lg-7">
+        <div class="d-flex flex-column gap-4 me-5">
+          <!-- Contact Information Card -->
+          <div class="card">
+            <div class="card-header fs-5">
+              Contact Information
+            </div>
+            <div class="card-body">
+              <div class="mb-3">
+                <label for="contactName" class="form-label">Name</label>
+                <input type="text" class="form-control" id="contactName" placeholder="Enter your name" required />
+              </div>
+              <div class="mb-3 d-flex flex-column flex-lg-row gap-3">
+                <div class="flex-fill">
+                  <label for="contactPhone" class="form-label">Contact Number</label>
+                  <input type="tel" class="form-control" id="contactPhone"  placeholder="####-####" pattern="\d{4}-\d{4}" required />
+                </div>
+                <div class="flex-fill">
+                  <label for="contactEmail" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="contactEmail" placeholder="Enter your Email" required />
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Shipping Address Card -->
+          <div class="card">
+            <div class="card-header fs-5">
+              Shipping Address
+            </div>
+            <div class="card-body">
+              <div class="mb-3">
+                <label for="recipientName" class="form-label">Recipient Name</label>
+                <input type="text" class="form-control" id="recipientName" placeholder="Enter the recipient's name" required />
+              </div>
+              <div class="mb-3">
+                <label for="addressL1" class="form-label">Address line 1</label>
+                <input type="text" class="form-control" id="addressL1" name="addressL1" required />
+              </div>
+              <div class="mb-3">
+                <label for="addressL2" class="form-label">Address line 2</label>
+                <input type="text" class="form-control" id="addressL2" name="addressL2" />
+              </div>
+              <div class="mb-3 d-flex flex-column flex-lg-row gap-3">
+                <div class="flex-fill">
+                  <label for="cityAddress" class="form-label">City</label>
+                  <input type="text" class="form-control" id="cityAddress" name="cityAddress" required />
+                </div>
+                <div class="flex-fill">
+                  <label for="country" class="form-label">Country</label>
+                  <input type="text" class="form-control" id="country" name="country" required />
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="postalCode" class="form-label">ZIP / Postal Code</label>
+                <input type="number" class="form-control" id="postalCode" name="postalCode" size="5" min="0" maxlength="5" required />
+              </div>
+            </div>
+          </div>
+          <!-- Payment Method Card -->
+          <div class="card">
+            <div class="card-header fs-5">
+              Payment Method
+            </div>
+            <div class="card-body">
+              <p>Please select your payment method.</p>
+              <div class="form-check mb-2">
+                <label class="form-check-label" for="fps">FPS</label>
+                <input class="form-check-input" type="radio" name="paymentMethod" id="fps" value="fps" checked />
+              </div>
+              <div class="form-check mb-2">
+                <label class="form-check-label" for="payMe">PayMe</label>
+                <input class="form-check-input" type="radio" name="paymentMethod" id="payMe" value="payMe" />
+              </div>
+              <div class="form-check mb-2">
+                <label class="form-check-label" for="alipay">Alipay</label>
+                <input class="form-check-input" type="radio" name="paymentMethod" id="alipay" value="alipay" />
+              </div>
+              <span class="text-danger">**After completing the payment, please Whatsapp the receipt to  +852 2111 1234.</span>
+            </div>
+          </div>
+        </div>
+      </div>
       <!-- Right section -->
-      <div></div>
+      <div class="col-12 col-lg-5">
+        <h5>Order Details</h5>
+      </div>
     </div>
    </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
