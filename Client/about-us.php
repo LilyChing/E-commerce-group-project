@@ -60,6 +60,7 @@
       </div>
     </div>
   </nav>
+  <!-- About us body -->
   <div class="container">
     <h1 class="my-4">About Us</h1>
 
