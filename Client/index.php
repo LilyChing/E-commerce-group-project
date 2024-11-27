@@ -19,6 +19,7 @@
                         <h1 class="modal-title fs-5" id="staticBackdropLabel">Enter Quantity</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
+                      <form action="XXX" method="POST">
                         <div class="modal-body">
                           <label for="quantity">How many items do you want to add to cart ?</label> <br/>
                           <input type="hidden" name="product_title" value="'.$title.'">
