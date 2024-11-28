@@ -13,6 +13,7 @@
   }
   if (isset($_POST['submit'])) {
     $product = array();
+    $product['product_id'] = (int)$_POST['product_id'];
     $product['product_title'] = $_POST['product_title'];
     $product['imgSrc'] = $_POST['imgSrc'];
     $product['u_price'] = (int)$_POST['u_price'];
@@ -20,9 +21,9 @@
     $_SESSION['cartList'][] = $product;
   }
 
-  function addToCartPop($imgSrc, $title, $u_price){
+  function addToCartPop($product_id, $imgSrc, $title, $u_price){
     return '
-                <div class="modal fade" id="staticBackdrop_'.$title.'" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal fade" id="staticBackdrop_'.$product_id.'" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                   <div class="modal-dialog">
                     <div class="modal-content">
                       <div class="modal-header">
@@ -32,6 +33,7 @@
                       <form action="" method="POST">
                         <div class="modal-body">
                           <label for="quantity">How many items do you want to add to cart ?</label> <br/>
+                          <input type="hidden" name="product_id" value="'.$product_id.'">
                           <input type="hidden" name="product_title" value="'.$title.'">
                           <input type="hidden" name="imgSrc" value="'.$imgSrc.'">
                           <input type="hidden" name="u_price" value="'.$u_price.'">
@@ -48,7 +50,7 @@
     ';
   }
 
-  function productCard($imgSrc, $title, $category, $u_price){
+  function productCard($product_id, $imgSrc, $title, $category, $u_price){
     return '
     <div class="col-3">
       <div class="card w-100" style="width: 18rem;">
@@ -83,13 +85,13 @@
               <span class="badge text-success border border-success">$'.$u_price.'</span>
             </div>
 
-            <button type="button" class="btn btn-success display-6 pt-1 d-flex align-items-center gap-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop_'.$title.'">
+            <button type="button" class="btn btn-success display-6 pt-1 d-flex align-items-center gap-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop_'.$product_id.'">
               Add to Cart
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
                 <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
               </svg>
             </button>
-              '.addtoCartPop($imgSrc,  $title,$u_price).'
+              '.addtoCartPop($product_id, $imgSrc,  $title, $u_price).'
             </div>  
           </div>
         </div>
@@ -240,11 +242,11 @@
     <h2 class="h3 pb-3">WiFi  Egg / SIM Cards</h2>
       <div class="row ">
         <?php
-        echo productCard("SIM_temp.png","Product Name","Category Name","140");
-        echo productCard("SIM_temp.png","Product Name","Category Name","140");
-        echo productCard("SIM_temp.png","Product Name","Category Name","140");
-        echo productCard("SIM_temp.png","Product Name","Category Name","140");
-        echo productCard("SIM_temp.png","Product Name","Category Name","140");
+        echo productCard(1,"SIM_temp.png","Product Name","Category Name","140");
+        echo productCard(2,"SIM_temp.png","Product Name","Category Name","140");
+        echo productCard(3,"SIM_temp.png","Product Name","Category Name","140");
+        echo productCard(4,"SIM_temp.png","Product Name","Category Name","140");
+        echo productCard(5,"SIM_temp.png","Product Name","Category Name","140");
         ?>
       </div>
   </div>
@@ -271,11 +273,11 @@
     <h2 class="h3 pb-3">Travel Accessories</h2>
       <div class="row ">
       <?php
-        echo productCard("SIM_temp.png","Product Name","Category Name","140");
-        echo productCard("SIM_temp.png","Product Name","Category Name","140");
-        echo productCard("SIM_temp.png","Product Name","Category Name","140");
-        echo productCard("SIM_temp.png","Product Name","Category Name","140");
-        echo productCard("SIM_temp.png","Product Name","Category Name","140");
+        echo productCard(6,"SIM_temp.png","Product Name","Category Name","140");
+        echo productCard(7,"SIM_temp.png","Product Name","Category Name","140");
+        echo productCard(8,"SIM_temp.png","Product Name","Category Name","140");
+        echo productCard(9,"SIM_temp.png","Product Name","Category Name","140");
+        echo productCard(10,"SIM_temp.png","Product Name","Category Name","140");
         ?>
     </div>
   </div>
