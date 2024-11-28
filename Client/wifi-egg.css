@@ -37,7 +37,7 @@ CSS styles body {
     margin-bottom: 20px;
     border-style: solid;
     border-color: #98bf21;
-    width: 15%;
+    padding: 0 12px;
     border-radius: 20%;
     color: green;
 }
