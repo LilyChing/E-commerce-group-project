@@ -154,9 +154,9 @@
       <div class="col-12 col-lg-5">
         <h5>Order Details</h5>
         <?php
-          var_dump($_SESSION['cartList']);
+          // var_dump($_SESSION['cartList']);
           foreach ($_SESSION['cartList'] as $item) {
-            echo '<div class="row">';
+            echo '<div class="row p-2">';
             echo '<div class="col-4">
                     <img src="./asset/'.$item['imgSrc'].'" class="w-100" />
                   </div>';
@@ -178,16 +178,16 @@
             echo '</div>
                   <button type="button" class="btn text-danger">Delete</button>
                 </div>
-              <hr/>
-            </div>';
+              </div>
+            <hr/>';
           }
         ?>
-        <div class="row">
+        <div class="row p-2">
           <div class="col-4">
             <img src="./asset/SIM_temp.png" class="w-100" />
           </div>
           <div class="col-8">
-            <div class="product-title">Product Name Title Here</div>
+            <div class="product-title">Fixed Product Sample</div>
             <div class="d-flex gap-3 justify-content-between">
               <div>
                 <select class="form-select" aria-label="quantity">
