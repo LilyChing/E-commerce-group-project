@@ -8,7 +8,9 @@
     array('path' => 'travel-accessories.php', 'name'=> 'Travel Accessories'),
   ];
   // store session data
-  $_SESSION['productsInCart'] = 0;
+  if(!isset($_SESSION['cartList'])){
+    $_SESSION['cartList'] = array();
+  }
 ?>
 <!DOCTYPE html>
 <html>
@@ -23,6 +25,7 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" type="text/css" href="all.css">
+  <link rel="stylesheet" type="text/css" href="wifi-egg.css">
 </head>
 
 <body>
@@ -150,6 +153,58 @@
       <!-- Right section -->
       <div class="col-12 col-lg-5">
         <h5>Order Details</h5>
+        <?php
+          var_dump($_SESSION['cartList']);
+          foreach ($_SESSION['cartList'] as $item) {
+            echo '<div class="row">';
+            echo '<div class="col-4">
+                    <img src="./asset/'.$item['imgSrc'].'" class="w-100" />
+                  </div>';
+            echo '<div class="col-8">
+                    <div class="product-title">'.$item['product_title'].'</div>';
+            echo '<div class="d-flex gap-3 justify-content-between">
+              <div>
+                <select class="form-select" aria-label="quantity">';
+            for ($i = 1; $i <= 10; $i++) {
+              if($item['quantity'] == $i){
+                echo '<option value="'.$i.'" selected >'.$i.'</option>';
+              }else{
+                echo '<option value="'.$i.'">'.$i.'</option>';
+              }
+            }
+            echo  '</select>
+              </div>';
+            echo '<div class="product-price ms-auto">$'.$item['u_price'].'</div>';
+            echo '</div>
+                  <button type="button" class="btn text-danger">Delete</button>
+                </div>
+              <hr/>
+            </div>';
+          }
+        ?>
+        <div class="row">
+          <div class="col-4">
+            <img src="./asset/SIM_temp.png" class="w-100" />
+          </div>
+          <div class="col-8">
+            <div class="product-title">Product Name Title Here</div>
+            <div class="d-flex gap-3 justify-content-between">
+              <div>
+                <select class="form-select" aria-label="quantity">
+                  <?php 
+                    for ($i = 1; $i <= 10; $i++) {
+                      echo '<option value="'.$i.'">'.$i.'</option>';
+                      // selected
+                    }
+                  ?>
+                </select>
+              </div>
+              <div class="product-price ms-auto">$999</div>
+            </div>
+            <button type="button" class="btn text-danger">Delete</button>
+          </div>
+          <hr/>
+        </div>
       </div>
     </div>
    </div>
