@@ -11,9 +11,6 @@
   if(!isset($_SESSION['cartList'])){
     $_SESSION['cartList'] = array();
   }
-  print_r ($_SESSION['cartList']);
-  echo 'REQUEST_METHOD: '.($_SERVER['REQUEST_METHOD'] == 'POST');
-  echo 'submit: '.(isset($_POST['submit'])? "true" : "fasle");
   if (isset($_POST['submit'])) {
     $product = array();
     $product['product_title'] = $_POST['product_title'];
