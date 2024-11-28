@@ -8,27 +8,41 @@
     array('path' => 'travel-accessories.php', 'name'=> 'Travel Accessories'),
   ];
   // store session data
-  $_SESSION['productsInCart'] = 0;
+  if(!isset($_SESSION['cartList'])){
+    $_SESSION['cartList'] = array();
+  }
+  print_r ($_SESSION['cartList']);
+  echo 'REQUEST_METHOD: '.($_SERVER['REQUEST_METHOD'] == 'POST');
+  echo 'submit: '.(isset($_POST['submit'])? "true" : "fasle");
+  if (isset($_POST['submit'])) {
+    $product = array();
+    $product['product_title'] = $_POST['product_title'];
+    $product['imgSrc'] = $_POST['imgSrc'];
+    $product['u_price'] = (int)$_POST['u_price'];
+    $product['quantity'] = (int)$_POST['quantity'];
+    $_SESSION['cartList'][] = $product;
+  }
 
-  function addToCartPop($title, $u_price){
+  function addToCartPop($imgSrc, $title, $u_price){
     return '
-                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal fade" id="staticBackdrop_'.$title.'" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                   <div class="modal-dialog">
                     <div class="modal-content">
                       <div class="modal-header">
                         <h1 class="modal-title fs-5" id="staticBackdropLabel">Enter Quantity</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
-                      <form action="XXX" method="POST">
+                      <form action="" method="POST">
                         <div class="modal-body">
                           <label for="quantity">How many items do you want to add to cart ?</label> <br/>
                           <input type="hidden" name="product_title" value="'.$title.'">
+                          <input type="hidden" name="imgSrc" value="'.$imgSrc.'">
                           <input type="hidden" name="u_price" value="'.$u_price.'">
-                          <input type="number" name="quantity" id="quantity">
+                          <input type="number" name="quantity" id="quantity" min="1" max="10" value="1" />
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                          <input type="submit" class="btn btn-primary" value="Hello">
+                          <input type="submit" class="btn btn-primary" name="submit" value="Submit">
                         </div>
                       </form>
                     </div>
@@ -72,13 +86,13 @@
               <span class="badge text-success border border-success">$'.$u_price.'</span>
             </div>
 
-            <button type="button" class="btn btn-success display-6 pt-1 d-flex align-items-center gap-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            <button type="button" class="btn btn-success display-6 pt-1 d-flex align-items-center gap-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop_'.$title.'">
               Add to Cart
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
                 <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
               </svg>
             </button>
-              '.addtoCartPop($title,$u_price).'
+              '.addtoCartPop($imgSrc,  $title,$u_price).'
             </div>  
           </div>
         </div>
@@ -145,8 +159,8 @@
         <a type="button" class="btn btn-link" href="shopping-cart.php" >
           <i class="bi bi-cart3" style="font-size: 2rem; color: white;"></i>
           <?php
-            if($_SESSION['productsInCart'] > 0){
-              echo '<span class="position-absolute translate-middle badge rounded-pill bg-danger">'.$_SESSION['productsInCart'];
+            if(isset($_SESSION['cartList'])){
+              echo '<span class="position-absolute translate-middle badge rounded-pill bg-danger">'.count($_SESSION['cartList']);
               echo '<span class="visually-hidden">Products in Cart</span></span>';
             }
           ?>
