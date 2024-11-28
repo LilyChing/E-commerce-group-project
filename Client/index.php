@@ -158,7 +158,7 @@
         <a type="button" class="btn btn-link" href="shopping-cart.php" >
           <i class="bi bi-cart3" style="font-size: 2rem; color: white;"></i>
           <?php
-            if(isset($_SESSION['cartList'])){
+            if(isset($_SESSION['cartList']) && count($_SESSION['cartList']) > 0){
               echo '<span class="position-absolute translate-middle badge rounded-pill bg-danger">'.count($_SESSION['cartList']);
               echo '<span class="visually-hidden">Products in Cart</span></span>';
             }
