@@ -55,13 +55,18 @@ $items = $_POST['items'];
 $shipping = $_POST['shipping']; //Shipping fee
 
 echo "<h1>Order Summary</h1>"." for ".$cName."<br/><br/>";
+ echo "<table border="0">";
+echo "<tr><td>"."Order ID : ".""."</td>"."<td>"."Order Time :".$order_time."</td></tr>";
+ echo "</table>"."<br/><br/>";
 echo "Item(s)<br/><br/>";
 $subtotal = 0; //sum of products
 foreach ($items as $index => $item) {
   $quantity = $item['order_qty'];
   $price = $item['product_price'];
-  echo "<tr><td>"htmlspecialchars($item['product_name'])."</td>" ."<td>"." $". $price."</td>" ."<td>". $quantity."</td>" . "<td>".str_repeat('&nbsp;', 3)."</td>" ."<td>"."= $" . number_format($price * $quantity, 2) ."</td></tr>" . "<br/>";
+  echo "<table border="0">";
+  echo "<tr><td>".htmlspecialchars($item['product_name'])."</td>" ."<td>"." $". $price."</td>" ."<td>". $quantity."</td>" . "<td>".str_repeat('&nbsp;', 3)."</td>" ."<td>"."= $" . number_format($price * $quantity, 2) ."</td></tr>" . "<br/>";
   $subtotal += $price * $quantity;
+  echo "</table>";
 }
 
 echo "Subtotal".str_repeat('&nbsp;', 5)."$". number_format($subtotal, 2)."<br/><br/>";
