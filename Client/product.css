@@ -10,8 +10,9 @@ CSS styles body {
 }
 .product-card {
     display: flex;
+    box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.2),
+        /* Shadow at the top */ 0 2px 0 rgba(0, 0, 0, 0.2); /* Shadow at the bottom */
     background-color: white;
-    border-radius: 5px;
     padding: 20px;
     width: 70%;
 }
