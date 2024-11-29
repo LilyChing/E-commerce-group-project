@@ -64,7 +64,7 @@ foreach ($items as $index => $item) {
   $quantity = $item['order_qty'];
   $price = $item['product_price'];
   echo "<table border="0">";
-  echo "<tr><td>"htmlspecialchars($item['product_name'])."</td>" ."<td>"." $". $price."</td>" ."<td>". $quantity."</td>" . "<td>".str_repeat('&nbsp;', 3)."</td>" ."<td>"."= $" . number_format($price * $quantity, 2) ."</td></tr>" . "<br/>";
+  echo "<tr><td>".htmlspecialchars($item['product_name'])."</td>" ."<td>"." $". $price."</td>" ."<td>". $quantity."</td>" . "<td>".str_repeat('&nbsp;', 3)."</td>" ."<td>"."= $" . number_format($price * $quantity, 2) ."</td></tr>" . "<br/>";
   $subtotal += $price * $quantity;
   echo "</table>";
 }
