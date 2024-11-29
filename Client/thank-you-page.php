@@ -1,33 +1,39 @@
 <?php
-$cName = $_POST['cname']; //customer name
-$items = $_POST['items[]'];
-$amount = $_POST['price[]'];
-$shipping = 30; //Shipping fee
+//Contact information (User input)
+$cName = $_POST['cName'];
+$cNumber = $_POST['cNumber'];
+$cEmail = $_POST['cEmail'];
+//Shipping Address
+$sName = $_POST['sName'];
+$sAddress = $_POST['sAddress'];
+$sCity = $_POST['sCity'];
+$sCountry = $_POST['sCountry'];
+$sPostcode = $_POST['sPostcode'];
+//Payment method
+$payment = $_POST['payment_method'];
 
-echo "<h1>Order Summary</h1>"." for ".$cname."<br/><br/>";
-echo "Item<br/><br/>";
+// Products Bought
+$items = $_POST['items'];
+// Shipping Fee
+$shipping = $_POST['shipping']; //Shipping fee
+
+echo "<h1>Order Summary</h1>"." for ".$cName."<br/><br/>";
+echo "Item(s)<br/><br/>";
 $subtotal = 0; //sum of products
 foreach ($items as $index => $item) {
-  $quantity = 1;
-  $price = $amounts[$index];
-  echo htmlspecialchars($item) . " x " . $quantity . str_repeat('&nbsp;', 3)." = $" . number_format($price * $quantity, 2) . "<br/>";
+  $quantity = $item['order_qty'];
+  $price = $item['product_price'];
+  echo htmlspecialchars($item['product_name']) ." $". $price . " x " . $quantity . str_repeat('&nbsp;', 3)." = $" . number_format($price * $quantity, 2) . "<br/>";
   $subtotal += $price * $quantity;
 }
 
 echo "Subtotal".str_repeat('&nbsp;', 5)."$". number_format($subtotal, 2)."<br/><br/>";
 
 // Total amount
-
-if ($subtotal<300) {
-echo "Shipping".str_repeat('&nbsp;', 5)."$".number_format($shipping, 2)."<br/><br/>";
+echo "Shipping".str_repeat('&nbsp;', 5)."$".$shipping."<br/><br/>";
  $total = $subtotal + $shipping;
   echo"<hr/>";
-  echo"<b>Total$</b>" . "<b>". str_repeat('&nbsp;', 5).number_format($total, 2) . "</b><br/><br/>";
-}
-else{echo "Shipping".str_repeat('&nbsp;', 5)."<b>$</b>" ."$".number_format(0, 2)."<br/><br/>";
-    $total = $subtotal;
-    echo"<hr/>";
-    echo"<b>Total</b>".str_repeat('&nbsp;', 5)."<b>$</b>" . "<b>".number_format($total, 2) . "</b><br/><br/>";}
+  echo"<b>Total</b>" . "<b>". str_repeat('&nbsp;', 5).'$'.number_format($total, 2) . "</b><br/><br/>";
 
 echo "<h1>Thank you!</h1>";
 ?>
