@@ -84,16 +84,16 @@
             <div class="card-body">
               <div class="mb-3">
                 <label for="contactName" class="form-label">Name</label>
-                <input type="text" class="form-control" id="contactName" placeholder="Enter your name" required />
+                <input type="text" class="form-control" id="contactName" name="cName" placeholder="Enter your name" required />
               </div>
               <div class="mb-3 d-flex flex-column flex-lg-row gap-3">
                 <div class="flex-fill">
                   <label for="contactPhone" class="form-label">Contact Number</label>
-                  <input type="tel" class="form-control" id="contactPhone"  placeholder="####-####" pattern="\d{4}-\d{4}" required />
+                  <input type="tel" class="form-control" id="contactPhone" name="cNumber" placeholder="########" pattern="\d{8}" required />
                 </div>
                 <div class="flex-fill">
                   <label for="contactEmail" class="form-label">Email</label>
-                  <input type="email" class="form-control" id="contactEmail" placeholder="Enter your Email" required />
+                  <input type="email" class="form-control" id="contactEmail" name="cEmail" placeholder="Enter your Email" required />
                 </div>
               </div>
             </div>
@@ -106,29 +106,25 @@
             <div class="card-body">
               <div class="mb-3">
                 <label for="recipientName" class="form-label">Recipient Name</label>
-                <input type="text" class="form-control" id="recipientName" placeholder="Enter the recipient's name" required />
+                <input type="text" class="form-control" id="recipientName" name="sName" placeholder="Enter the recipient's name" required />
               </div>
               <div class="mb-3">
-                <label for="addressL1" class="form-label">Address line 1</label>
-                <input type="text" class="form-control" id="addressL1" name="addressL1" required />
-              </div>
-              <div class="mb-3">
-                <label for="addressL2" class="form-label">Address line 2</label>
-                <input type="text" class="form-control" id="addressL2" name="addressL2" />
+                <label for="address" class="form-label">Address</label>
+                <textarea type="text" class="form-control" id="address" name="sAddress" rows="2" required ></textarea>
               </div>
               <div class="mb-3 d-flex flex-column flex-lg-row gap-3">
                 <div class="flex-fill">
                   <label for="cityAddress" class="form-label">City</label>
-                  <input type="text" class="form-control" id="cityAddress" name="cityAddress" required />
+                  <input type="text" class="form-control" id="cityAddress" name="sCity" required />
                 </div>
                 <div class="flex-fill">
                   <label for="country" class="form-label">Country</label>
-                  <input type="text" class="form-control" id="country" name="country" required />
+                  <input type="text" class="form-control" id="country" name="sCountry" required />
                 </div>
               </div>
               <div class="mb-3">
                 <label for="postalCode" class="form-label">ZIP / Postal Code</label>
-                <input type="number" class="form-control" id="postalCode" name="postalCode" size="5" min="0" maxlength="5" required />
+                <input type="number" class="form-control" id="postalCode" name="sPostcode" size="5" min="0" maxlength="5" required />
               </div>
             </div>
           </div>
@@ -141,15 +137,15 @@
               <p>Please select your payment method.</p>
               <div class="form-check mb-2">
                 <label class="form-check-label" for="fps">FPS</label>
-                <input class="form-check-input" type="radio" name="paymentMethod" id="fps" value="fps" checked />
+                <input class="form-check-input" type="radio" name="payment_method" id="fps" value="fps" checked />
               </div>
               <div class="form-check mb-2">
                 <label class="form-check-label" for="payMe">PayMe</label>
-                <input class="form-check-input" type="radio" name="paymentMethod" id="payMe" value="payMe" />
+                <input class="form-check-input" type="radio" name="payment_method" id="payMe" value="payMe" />
               </div>
               <div class="form-check mb-2">
                 <label class="form-check-label" for="alipay">Alipay</label>
-                <input class="form-check-input" type="radio" name="paymentMethod" id="alipay" value="alipay" />
+                <input class="form-check-input" type="radio" name="payment_method" id="alipay" value="alipay" />
               </div>
               <span class="text-danger">**After completing the payment, please Whatsapp the receipt to  +852 2111 1234.</span>
             </div>
@@ -171,7 +167,7 @@
                     <div class="product-title">'.$item['product_title'].'</div>';
             echo '<div class="d-flex gap-3 justify-content-between">
               <div>
-                <select class="form-select" aria-label="quantity" disabled >';
+                <select class="form-select" aria-label="quantity" name="items['.$item_index.'][order_qty]" >';
             for ($i = 1; $i <= 10; $i++) {
               if($item['quantity'] == $i){
                 echo '<option value="'.$i.'" selected >'.$i.'</option>';
@@ -187,6 +183,10 @@
                 </div>
               </div>
             <hr/>';
+            echo '<input type="hidden" name="items['.$item_index.'][product_id]" value="'.$item['product_id'].'">';
+            echo '<input type="hidden" name="items['.$item_index.'][product_name]" value="'.$item['product_title'].'">';
+            echo '<input type="hidden" name="items['.$item_index.'][product_price]" value="'.$item['u_price'].'">';
+            echo '<input type="hidden" name="items['.$item_index.'][img_src]" value="'.$item['imgSrc'].'">';
           }
         ?>
         <!-- Checkout information: count Subtotal & Total amount -->
@@ -202,15 +202,17 @@
             echo "<span>$". number_format($subtotal, 2).'</span>';
           ?>
          </div>
+         <div class="text-end text-danger">Enjoy FREE tracked delivery on all FULFIL orders over HK$300 !</div>
          <hr/>
          <div class="d-flex justify-content-between" >
           <span>Shipping Fee</span>
           <?php 
             $shipping = 0;
-            if(count($_SESSION['cartList']) > 0){
+            if(count($_SESSION['cartList']) > 0 && $subtotal <300){
               $shipping = 249;
             }
             echo "<span>$". number_format($shipping, 2).'</span>';
+            echo '<input type="hidden" name="shipping" value="'.$shipping.'">';
           ?>
          </div>
          <hr/>
@@ -221,7 +223,7 @@
           ?>
         </div>
         <!-- Checkout button -->
-        <button type="submit" name="checkout" class="btn btn-dark w-100 py-2 rounded-pill">Checkout</button>
+        <button type="submit" name="checkout" value="Checkout" class="btn btn-dark w-100 py-2 rounded-pill">Buy Now</button>
       </div>
     </div>
     </form>
