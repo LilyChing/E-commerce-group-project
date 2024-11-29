@@ -50,7 +50,7 @@
     ';
   }
 
-  function productCard($product_id, $imgSrc, $title, $category, $u_price){
+  function productCard($product_id, $imgSrc, $title, $category, $u_price,$url){
     return '
     <div class="col-3">
       <div class="card w-100" style="width: 18rem;">
@@ -79,7 +79,7 @@
             <a href="" class="text-black text-decoration-none">
               <h3 class=" h5 card-title">'.$title.'</h3>
             </a>
-            <a class="h6 text-primary text-decoration-none" href="#">'.$category.'</a>
+            <a class="h6 text-primary text-decoration-none" href="'.$url.'">'.$category.'</a>
             <div class="operate d-flex mt-3 justify-content-between align-items-center">
             <div class="price">
               <span class="badge text-success border border-success">$'.$u_price.'</span>
@@ -242,11 +242,11 @@
     <h2 class="h3 pb-3">SIM Cards</h2>
       <div class="row ">
         <?php
-        echo productCard(1,"SIM_temp.png","Product Name","Category Name","140");
-        echo productCard(2,"SIM_temp.png","Product Name","Category Name","140");
-        echo productCard(3,"SIM_temp.png","Product Name","Category Name","140");
-        echo productCard(4,"SIM_temp.png","Product Name","Category Name","140");
-        echo productCard(5,"SIM_temp.png","Product Name","Category Name","140");
+          echo productCard(1001,"sim sg.jpg","Singapore","SIM Card","188","sim.php");
+          echo productCard(1002,"sim Italy.jpg","Italy","SIM Card","188","sim.php");
+          echo productCard(1003,"sim japan.jpg","Japan","SIM Card","88","sim.php");
+          echo productCard(1004,"sim korea.jpg","Korea","SIM Card","88","sim.php");
+          echo productCard(1005,"sim thai.jpg","Thai","SIM Card","58","sim.php");
         ?>
       </div>
   </div>
@@ -270,14 +270,14 @@
   </div>
 
   <div class="container pt-5">
-    <h2 class="h3 pb-3">Travel Accessories</h2>
+    <h2 class="h3 pb-3" >Travel Accessories</h2>
       <div class="row ">
       <?php
-        echo productCard(6,"SIM_temp.png","Product Name","Category Name","140");
-        echo productCard(7,"SIM_temp.png","Product Name","Category Name","140");
-        echo productCard(8,"SIM_temp.png","Product Name","Category Name","140");
-        echo productCard(9,"SIM_temp.png","Product Name","Category Name","140");
-        echo productCard(10,"SIM_temp.png","Product Name","Category Name","140");
+          echo productCard(1021,"1.jpg","RIMOWA - Check-In L","Travel Accessories","1888","travel-accessories.php");
+          echo productCard(1022,"2.jpg","RIMOWA - Cabin Twist","Travel Accessories","1888","travel-accessories.php");
+          echo productCard(1023,"3.jpg","RIMOWA - Cabin","Travel Accessories","1888","travel-accessories.php");
+          echo productCard(1024,"4.jpg","KSamsonite - GLOBAL Korea","Travel Accessories","388","travel-accessories.php");
+          echo productCard(1025,"5.jpg","Samsonite - ZIRA","Travel Accessories","888","travel-accessories.php");
         ?>
     </div>
   </div>
