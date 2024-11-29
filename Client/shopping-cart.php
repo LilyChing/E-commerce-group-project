@@ -11,6 +11,11 @@
   if(!isset($_SESSION['cartList'])){
     $_SESSION['cartList'] = array();
   }
+  // While clicking delete_item button
+  if(isset($_POST['delete_item'])){
+    // Remove item from $_SESSION['cartList']
+    array_splice($_SESSION['cartList'], $_POST['delete_item'], 1);
+  }
 ?>
 <!DOCTYPE html>
 <html>
@@ -66,6 +71,7 @@
   <!-- Cart body -->
    <div class="container">
     <h1 class="my-4">Checkout</h1>
+    <form action="thank-you-page.php" method="POST">
     <div class="row">
       <!-- Left section -->
       <div class="col-12 col-lg-7">
@@ -153,9 +159,10 @@
       <!-- Right section -->
       <div class="col-12 col-lg-5">
         <h5>Order Details</h5>
+          <!-- Using for loop to create product card -->
         <?php
           // var_dump($_SESSION['cartList']);
-          foreach ($_SESSION['cartList'] as $item) {
+          foreach ($_SESSION['cartList'] as $item_index => $item) {
             echo '<div class="row p-2">';
             echo '<div class="col-4">
                     <img src="./asset/'.$item['imgSrc'].'" class="w-100" />
@@ -164,7 +171,7 @@
                     <div class="product-title">'.$item['product_title'].'</div>';
             echo '<div class="d-flex gap-3 justify-content-between">
               <div>
-                <select class="form-select" aria-label="quantity">';
+                <select class="form-select" aria-label="quantity" disabled >';
             for ($i = 1; $i <= 10; $i++) {
               if($item['quantity'] == $i){
                 echo '<option value="'.$i.'" selected >'.$i.'</option>';
@@ -176,37 +183,48 @@
               </div>';
             echo '<div class="product-price ms-auto">$'.$item['u_price'].'</div>';
             echo '</div>
-                  <button type="button" class="btn text-danger">Delete</button>
+                  <button type="submit" formaction="" method="POST" formnovalidate="formnovalidate" class="btn text-danger" name="delete_item" value="'.$item_index.'" >Delete</button>
                 </div>
               </div>
             <hr/>';
           }
         ?>
-        <div class="row p-2">
-          <div class="col-4">
-            <img src="./asset/SIM_temp.png" class="w-100" />
-          </div>
-          <div class="col-8">
-            <div class="product-title">Fixed Product Sample</div>
-            <div class="d-flex gap-3 justify-content-between">
-              <div>
-                <select class="form-select" aria-label="quantity">
-                  <?php 
-                    for ($i = 1; $i <= 10; $i++) {
-                      echo '<option value="'.$i.'">'.$i.'</option>';
-                      // selected
-                    }
-                  ?>
-                </select>
-              </div>
-              <div class="product-price ms-auto">$999</div>
-            </div>
-            <button type="button" class="btn text-danger">Delete</button>
-          </div>
-          <hr/>
+        <!-- Checkout information: count Subtotal & Total amount -->
+        <div class="d-flex justify-content-between mt-5" >
+          <span>Subtotal</span>
+          <?php 
+            $subtotal = 0;
+            if(count($_SESSION['cartList']) > 0){
+              foreach ($_SESSION['cartList'] as $item) {
+                $subtotal += (float)$item['u_price'] * (int)$item['quantity'];
+              }
+            }
+            echo "<span>$". number_format($subtotal, 2).'</span>';
+          ?>
+         </div>
+         <hr/>
+         <div class="d-flex justify-content-between" >
+          <span>Shipping Fee</span>
+          <?php 
+            $shipping = 0;
+            if(count($_SESSION['cartList']) > 0){
+              $shipping = 249;
+            }
+            echo "<span>$". number_format($shipping, 2).'</span>';
+          ?>
+         </div>
+         <hr/>
+         <div class="d-flex justify-content-between mb-4" >
+          <h5><b>Total</b></h5>
+          <?php
+            echo '<h5><b>$'.number_format(($subtotal + $shipping), 2).'</b></h5>';
+          ?>
         </div>
+        <!-- Checkout button -->
+        <button type="submit" name="checkout" class="btn btn-dark w-100 py-2 rounded-pill">Checkout</button>
       </div>
     </div>
+    </form>
    </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
