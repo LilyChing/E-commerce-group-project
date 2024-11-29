@@ -53,68 +53,24 @@
 
   function productCard($product_id, $imgSrc, $title, $category, $u_price){
     return '
-    <div class="col-3">
-      <div class="card w-100" style="width: 18rem;">
-          <div class="position-relative">
-            <span class="badge rounded-pill text-bg-light position-absolute mt-2 ms-2">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FF9A62" class="bi bi-fire" viewBox="0 0 16 16">
-              <path d="M8 16c3.314 0 6-2 6-5.5 0-1.5-.5-4-2.5-6 .25 1.5-1.25 2-1.25 2C11 4 9 .5 6 0c.357 2 .5 4-2 6-1.25 1-2 2.729-2 4.5C2 14 4.686 16 8 16m0-1c-1.657 0-3-1-3-2.75 0-.75.25-2 1.25-3C6.125 10 7 10.5 7 10.5c-.375-1.25.5-3.25 2-3.5-.179 1-.25 2 1 3 .625.5 1 1.364 1 2.25C11 14 9.657 15 8 15"/>
-            </svg>
-              Hot Item
-            </span>
-            <div class="like_btn position-absolute end-0 mt-2 me-2 p-3 bg-white">
-              <div class="like_btn_group">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart d-none" viewBox="0 0 16 16">
-                  <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
-                </svg>
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="red" class="bi bi-heart-fill" viewBox="0 0 16 16">
-                  <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
-                </svg>
-              </div>
-            </div>
-            <a href="#">
-              <img src="./asset/'.$imgSrc.'" class="card-img-top" alt="...">
-            </a>
+      <div class="product-container">
+          <div class="product-card">
+              <img src="./asset/'.$imgSrc.'" class="custom-size">
+                  <div class="product-info">
+                      <div class="product-title">'.$title.'</div>
+                      <div class="product-price">$'.$u_price.'</div>
+                      <div>'.$category.'</div>
+                      <button type="button" class="btn btn-success display-6 pt-1 d-flex align-items-center gap-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop_'.$product_id.'">
+                        Add to Cart
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
+                          <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                        </svg>
+                      </button>
+                      '.addtoCartPop($product_id, $imgSrc,  $title, $u_price).'
+                  </div>
           </div>
-          <div class="card-body">
-            <a href="" class="text-black text-decoration-none">
-              <h3 class=" h5 card-title">'.$title.'</h3>
-            </a>
-            <a class="h6 text-primary text-decoration-none" href="#">'.$category.'</a>
-            <div class="operate d-flex mt-3 justify-content-between align-items-center">
-            <div class="price">
-              <span class="badge text-success border border-success">$'.$u_price.'</span>
-            </div>
-
-            <button type="button" class="btn btn-success display-6 pt-1 d-flex align-items-center gap-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop_'.$product_id.'">
-              Add to Cart
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
-                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
-              </svg>
-            </button>
-              '.addtoCartPop($product_id, $imgSrc,  $title, $u_price).'
-            </div>  
-          </div>
-        </div>
-      </div>  
-    ';
-  }
-
-  function partnerCard($imgSrc,$title,$url){
-  return '
-    <div class="col-3">
-      <div class="card w-100 border border-0" style="width: 18rem;">
-        <div class="position-relative">
-          <a href="'.$url.'">
-            <img src="./asset/'.$imgSrc.'" class="card-img-top" alt="...">
-          </a>
-        </div>
-        <div class="card-body">
-          <h3 class=" h5 card-title">'.$title.'</h3>
-        </div>
       </div>
-    </div>
-  ';
+    ';
   }
 ?>
 <!DOCTYPE html>
@@ -172,66 +128,13 @@
             <h1>Tour</h1>
             </div> 
         </div>
-        <div class="product-container">
-            <div class="product-card">
-                <img src="./asset/Sing.jpg" class="custom-size">
-                    <div class="product-info">
-                        <div class="product-title">Singapore</div>
-                        <div class="product-price">$8888</div>
-                        <div>Singapore (1/3/5/7 Days)</div>
-                        <p>Guided tours showcasing major attractions like Marina Bay Sands,<br>Gardens by the Bay, Merlion Park, and Chinatown.</p>
-                        <button class="add-to-cart" >Add to cart</button>
-                    </div>
-            </div>
-        </div>
-        <div class="product-container">
-            <div class="product-card">
-                <img src="./asset/Italy.jpg" class="custom-size">
-                    <div class="product-info">
-                        <div class="product-title">Italy</div>
-                        <div class="product-price">$8888</div>
-                        <div>Italy (1/3/5/7 Days)</div>
-                        <p>Guided tours of major cities like Rome, Florence, Venice, and Milan.</p>
-                        <button class="add-to-cart">Add to cart</button>
-                    </div>
-            </div>
-        </div>
-        <div class="product-container">
-            <div class="product-card">
-                <img src="./asset/Japan.jpg" class="custom-size">
-                    <div class="product-info">
-                        <div class="product-title">Japan</div>
-                        <div class="product-price">$4888</div>
-                        <div>Japan (1/3/5/7 Days)</div>
-                        <p>Guided tours of major cities such as Tokyo, Kyoto, and Hiroshima.</p>
-                        <button class="add-to-cart">Add to cart</button>
-                    </div>
-            </div>
-        </div>
-        <div class="product-container">
-            <div class="product-card">
-                <img src="./asset/Korea.jpg" class="custom-size">
-                    <div class="product-info">
-                        <div class="product-title">Korea</div>
-                        <div class="product-price">$4888</div>
-                        <div>Korea (1/3/5/7 Days)</div>
-                        <p>Guided tours of major cities like Seoul, Busan, and Incheon.</p>
-                        <button class="add-to-cart">Add to cart</button>
-                    </div>
-            </div>
-        </div>
-        <div class="product-container">
-            <div class="product-card">
-                <img src="./asset/Thai.jpg" class="custom-size">
-                    <div class="product-info">
-                        <div class="product-title">Thai</div>
-                        <div class="product-price">$5888</div>
-                        <div>Thai (1/3/5/7 Days)</div>
-                        <p>Guided tours of major cities like Bangkok, Chiang Mai, and Phuket.</p>
-                        <button class="add-to-cart">Add to cart</button>
-                    </div>
-            </div>
-        </div>
+        <?php
+          echo productCard(1011,"sing.jpg","Singapore","Singapore (1/3/5/7 Days)","8888");
+          echo productCard(1012,"Italy.jpg","Italy","Italy (1/3/5/7 Days)","8888");
+          echo productCard(1013,"japan.jpg","Japan","Japan (1/3/5/7 Days)","4888");
+          echo productCard(1014,"korea.jpg","Korea","Korea (1/3/5/7 Days)","4888");
+          echo productCard(1015,"thai.jpg","Thai","Thai (1/3/5/7 Days)","5888");
+        ?>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
           integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
         </script>
