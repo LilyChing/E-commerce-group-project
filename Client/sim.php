@@ -143,71 +143,74 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
           integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
         </script>
-        <footer>
+       <footer>
+        <hr/>
+            <div class ="m-5">
             <img src="./asset/logo_small.png" />
             <table style="width:100%">
-                <tr>
-                    <th align="left">Download apps </th>
+            <tr>
+              <th align="left">Download apps </th>
                     <th align="left">Products</th>
                     <th align="left">Shopping Cart</th>
                     <th align="left">Help</th>
                     <th align="left">Contact Us</th>
-                </tr>
-                <tr>
-                <td rowspan="4"><img src="./asset/leadingduck.png" width="150px" height="150px"/></td>
-                <td>Tour Service</td>
-                <td>Order Details</td>
-                <td>Support</td>
-                <td rowspan="4" td id="top">Address<br/>Room 1201, 12/F, Polyu Hung Hom Bay<br/>
-                    Campus, Hung Lok Road, Hung Hom,<br/>
-                    Kowloon<br/>
-                    <br/>
-                    Opening Hour:<br/>
+                    </tr>
+                    <tr>
+                    <td rowspan="4"><img src="./asset/leadingduck.png" width="150px" height="150px"/></td>
+                    <td>Tour Service</td>
+                    <td>Order Details</td>
+                    <td>Support</td>
+                    <td rowspan="4" td id="top">Address<br/>Room 1201, 12/F, Polyu Hung Hom Bay<br/>
+                        Campus, Hung Lok Road, Hung Hom,<br/>
+                        Kowloon<br/>
+                        <br/>
+                        Opening Hour:<br/>
                         Monday to Friday: 8:30 am - 5:30<br/>
                         Saturday, Sunday and Public holidays are closed
-                </td>
+                    </td>
                     <td>Hotline: (852) 3746 0900</td>
-            </tr>
-            <tr>
-                <td>SIM Cards</td>
-                <td>Payment Method</td>
-                <td>Term & Conditons</td>
-                </tr>
-
-                <tr>
-                    <td>Travel Accessories</td>
-                <td></td>
-                    <td>Privary Policy</td>
-                    <td>WhatsApp: (852) 3746 0888</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td>Refund Policy</td>
-                    <td>Email:  <a href="mailto:leading_duck102@outlook.com">leading_duck102@outlook.com</a>
-                    </td>
                     </tr>
-                <tr>
-                    <td><b> More About Us</b></td>
-                </tr>
-                <tr>
-                    <td>
-                    <a target=”_blank” href="https://www.facebook.com/">
-                    <img src="./asset/facebook.png"/> Facebook </a>
-                    </td>
-                <tr>
-                    <td>
-                        <a target=”_blank” href="https://www.intagram.com/">
-                        <img src="./asset/intagram.png"/> Intagram</a>
-                    </td>
-                </tr>
-                <tr> 
-                    <td>
-                        <a target=”_blank” href="https://www.youtube.com/">
-                        <img src="./asset/youtube.png"/> Youtube</a> 
-                    </td>
-                </tr>       
-            </table>
-        </footer>
+                    <tr>
+                    <td>Wifi Egg /  SIM Cards</td>
+                    <td>Payment Method</td>
+                    <td>Term & Conditons</td>
+                    </tr>
+
+                    <tr>
+                        <td>Travel Accessories</td>
+                    <td></td>
+                        <td>Privary Policy</td>
+                        <td>WhatsApp: (852) 3746 0888</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>Refund Policy</td>
+                        <td>Email:  <a href="mailto:leading_duck102@outlook.com">leading_duck102@outlook.com</a>
+                        </td>
+                        </tr>
+                    <tr>
+                        <td><b> More About Us</b></td>
+                    </tr>
+                    <tr>
+                        <td>
+                        <a target=”_blank” href="https://www.facebook.com/">
+                        <img src="./asset/facebook.png"/> Facebook </a>
+                        </td>
+                    <tr>
+                        <td>
+                            <a target=”_blank” href="https://www.intagram.com/">
+                            <img src="./asset/intagram.png"/> Intagram</a>
+                        </td>
+                    </tr>
+                    <tr> 
+                        <td>
+                            <a target=”_blank” href="https://www.youtube.com/">
+                            <img src="./asset/youtube.png"/> Youtube</a> 
+                        </td>
+                    </tr>       
+                </table>
+            </div>
+    </footer>
     </body>
 </html>
