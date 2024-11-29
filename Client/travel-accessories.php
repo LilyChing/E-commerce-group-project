@@ -58,15 +58,17 @@
                 <img src="./asset/'.$imgSrc.'" class="custom-size">
                     <div class="product-info">
                         <div class="product-title">'.$title.'</div>
-                        <div class="product-price">$'.$u_price.'</div>
+                        <div class="badge text-success border border-success font-size-18;">$'.$u_price.'</div>
                         <div>'.$category.'</div>
-                        <button type="button" class="btn btn-success display-6 pt-1 d-flex align-items-center gap-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop_'.$product_id.'">
-                          Add to Cart
-                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
-                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
-                          </svg>
-                        </button>
                         '.addtoCartPop($product_id, $imgSrc,  $title, $u_price).'
+                        </div>
+                    <div class="d-flex align-items-center ms-auto">
+                      <button type="button" class="btn btn-success display-6 pt-1 d-flex align-items-center gap-2 ms-auto " data-bs-toggle="modal" data-bs-target="#staticBackdrop_'.$product_id.'">
+                        Add to Cart
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
+                          <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                        </svg>
+                      </button>
                     </div>
             </div>
         </div>
@@ -79,7 +81,7 @@
     <title>Travel Accessories</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="product.css">\
+    <link rel="stylesheet" href="product.css">
     <link rel="icon" href="./asset/rubber-duck-yellow.png" type="image/icon type">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -113,8 +115,8 @@
         <a type="button" class="btn btn-link" href="shopping-cart.php" >
           <i class="bi bi-cart3" style="font-size: 2rem; color: white;"></i>
           <?php
-            if($_SESSION['productsInCart'] > 0){
-              echo '<span class="position-absolute translate-middle badge rounded-pill bg-danger">'.$_SESSION['productsInCart'];
+            if(isset($_SESSION['cartList']) && count($_SESSION['cartList']) > 0){
+              echo '<span class="position-absolute translate-middle badge rounded-pill bg-danger">'.count($_SESSION['cartList']);
               echo '<span class="visually-hidden">Products in Cart</span></span>';
             }
           ?>
