@@ -16,8 +16,7 @@ $sCountry = $_POST['scountry'];
 $sPostcode = $_POST['cpostcode'];
 //Payment method and order detail
 $payment_method = $_POST['payments[]'];
-$order_time = $_POST['payments[]'];
-$order_id = $_POST['payments[]'];
+$order_time = date("Y-m-d");
   
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -25,10 +24,9 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
-
 // Prepare and bind
 $stmt = $conn->prepare("INSERT INTO PurchaseData (order_id,cName, cNumber, cEmail, sName, sAddress, sCity, sCountry, sPostcode, payment_method,order_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-$stmt->bind_param("sssssssssss",$order_id, $cName, $cNumber, $cEmail, $sName, $sAddress, $sCity, $sCountry, $sPostcode, $payment_method,$order_time);
+$stmt->bind_param("sssssssssss",sequence_1.nextval, $cName, $cNumber, $cEmail, $sName, $sAddress, $sCity, $sCountry, $sPostcode, $payment_method,$order_time);
 
 if (mysqli_query($conn, $sql)) {
   echo "New record created successfully";
@@ -49,6 +47,7 @@ $sCountry = $_POST['sCountry'];
 $sPostcode = $_POST['sPostcode'];
 //Payment method 
 $payment = $_POST['payment_method'];
+$order_time = date("Y/m/d");
 
 // Products Bought
 $items = $_POST['items'];
@@ -61,7 +60,7 @@ $subtotal = 0; //sum of products
 foreach ($items as $index => $item) {
   $quantity = $item['order_qty'];
   $price = $item['product_price'];
-  echo htmlspecialchars($item['product_name']) ." $". $price . " x " . $quantity . str_repeat('&nbsp;', 3)." = $" . number_format($price * $quantity, 2) . "<br/>";
+  echo "<tr><td>"htmlspecialchars($item['product_name'])."</td>" ."<td>"." $". $price."</td>" ."<td>". $quantity."</td>" . "<td>".str_repeat('&nbsp;', 3)."</td>" ."<td>"."= $" . number_format($price * $quantity, 2) ."</td></tr>" . "<br/>";
   $subtotal += $price * $quantity;
 }
 
