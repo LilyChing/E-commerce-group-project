@@ -56,7 +56,7 @@ $shipping = $_POST['shipping']; //Shipping fee
 
 echo "<h1>Order Summary</h1>"." for ".$cName."<br/><br/>";
  echo "<table border="0">";
-echo "<tr><td>"."Order ID : ".""."</td>"."<td>"."Order Time :".$order_time."</td>";
+echo "<tr><td>"."Order ID : ".""."</td>"."<td>"."Order Time :".$order_time."</td></tr>";
  echo "</table>"."<br/><br/>";
 echo "Item(s)<br/><br/>";
 $subtotal = 0; //sum of products
