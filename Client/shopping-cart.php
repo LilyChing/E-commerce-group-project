@@ -30,7 +30,7 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" type="text/css" href="all.css">
-  <link rel="stylesheet" type="text/css" href="sim.css">
+  <link rel="stylesheet" type="text/css" href="product.css">
 </head>
 
 <body>
@@ -164,7 +164,7 @@
           // var_dump($_SESSION['cartList']);
           foreach ($_SESSION['cartList'] as $item_index => $item) {
             echo '<div class="row p-2">';
-            echo '<div class="col-4">
+            echo '<div class="col-4 d-flex align-items-center">
                     <img src="./asset/'.$item['imgSrc'].'" class="w-100" />
                   </div>';
             echo '<div class="col-8">
