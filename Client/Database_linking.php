@@ -26,7 +26,7 @@ if (!$conn) {
 
 // Prepare and bind
 $stmt = $conn->prepare("INSERT INTO PurchaseData (order_id,cName, cNumber, cEmail, sName, sAddress, sCity, sCountry, sPostcode, payment_method,order_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-$stmt->bind_param("ssssssssss",$order_id, $cName, $cNumber, $cEmail, $sName, $sAddress, $sCity, $sCountry, $sPostcode, $payment_method,$order_time);
+$stmt->bind_param("sssssssssss",$order_id, $cName, $cNumber, $cEmail, $sName, $sAddress, $sCity, $sCountry, $sPostcode, $payment_method,$order_time);
 
 if (mysqli_query($conn, $sql)) {
   echo "New record created successfully";
