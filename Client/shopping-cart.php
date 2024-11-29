@@ -4,7 +4,7 @@
     array('path' => 'index.php', 'name'=> 'Home'),
     array('path' => 'about-us.php', 'name'=> 'About Us'),
     array('path' => 'sim.php', 'name'=> 'SIM Cards'),
-    array('path' => 'tour.php', 'name'=> 'Travel Services'),
+    array('path' => 'tour.php', 'name'=> 'Tour Services'),
     array('path' => 'travel-accessories.php', 'name'=> 'Travel Accessories'),
   ];
   // store session data
