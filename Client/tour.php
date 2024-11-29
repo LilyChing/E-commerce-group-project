@@ -8,6 +8,7 @@
     array('path' => 'travel-accessories.php', 'name'=> 'Travel Accessories'),
   ];
   // store session data
+  $_SESSION['productsInCart'] = 0;
   if(!isset($_SESSION['cartList'])){
     $_SESSION['cartList'] = array();
   }
@@ -176,7 +177,7 @@
                 <img src="./asset/Sing.jpg" class="custom-size">
                     <div class="product-info">
                         <div class="product-title">Singapore</div>
-                        <div class="product-price">$423</div>
+                        <div class="product-price">$8888</div>
                         <div>Singapore (1/3/5/7 Days)</div>
                         <p>Guided tours showcasing major attractions like Marina Bay Sands,<br>Gardens by the Bay, Merlion Park, and Chinatown.</p>
                         <button class="add-to-cart" >Add to cart</button>
@@ -188,7 +189,7 @@
                 <img src="./asset/Italy.jpg" class="custom-size">
                     <div class="product-info">
                         <div class="product-title">Italy</div>
-                        <div class="product-price">$423</div>
+                        <div class="product-price">$8888</div>
                         <div>Italy (1/3/5/7 Days)</div>
                         <p>Guided tours of major cities like Rome, Florence, Venice, and Milan.</p>
                         <button class="add-to-cart">Add to cart</button>
@@ -200,7 +201,7 @@
                 <img src="./asset/Japan.jpg" class="custom-size">
                     <div class="product-info">
                         <div class="product-title">Japan</div>
-                        <div class="product-price">$423</div>
+                        <div class="product-price">$4888</div>
                         <div>Japan (1/3/5/7 Days)</div>
                         <p>Guided tours of major cities such as Tokyo, Kyoto, and Hiroshima.</p>
                         <button class="add-to-cart">Add to cart</button>
@@ -212,7 +213,7 @@
                 <img src="./asset/Korea.jpg" class="custom-size">
                     <div class="product-info">
                         <div class="product-title">Korea</div>
-                        <div class="product-price">$423</div>
+                        <div class="product-price">$4888</div>
                         <div>Korea (1/3/5/7 Days)</div>
                         <p>Guided tours of major cities like Seoul, Busan, and Incheon.</p>
                         <button class="add-to-cart">Add to cart</button>
@@ -224,14 +225,16 @@
                 <img src="./asset/Thai.jpg" class="custom-size">
                     <div class="product-info">
                         <div class="product-title">Thai</div>
-                        <div class="product-price">$423</div>
+                        <div class="product-price">$5888</div>
                         <div>Thai (1/3/5/7 Days)</div>
                         <p>Guided tours of major cities like Bangkok, Chiang Mai, and Phuket.</p>
                         <button class="add-to-cart">Add to cart</button>
                     </div>
             </div>
         </div>
-
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+        </script>
         <footer>
             <img src="./asset/logo_small.png" />
             <table style="width:100%">

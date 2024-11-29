@@ -8,6 +8,7 @@
     array('path' => 'travel-accessories.php', 'name'=> 'Travel Accessories'),
   ];
   // store session data
+  $_SESSION['productsInCart'] = 0;
   if(!isset($_SESSION['cartList'])){
     $_SESSION['cartList'] = array();
   }
@@ -176,7 +177,7 @@
                 <img src="./asset/1.jpg" class="custom-size">
                     <div class="product-info">
                         <div class="product-title">RIMOWA - Check-In L</div>
-                        <div class="product-price">$423</div>
+                        <div class="product-price">$788</div>
                         <p>Rimowa's Check-In series is designed for larger storage capacity,<br>  making it ideal for longer trips.</p>
                         <button class="add-to-cart" >Add to cart</button>
                     </div>
@@ -187,7 +188,7 @@
                 <img src="./asset/2.jpg" class="custom-size">
                     <div class="product-info">
                         <div class="product-title">RIMOWA - Cabin Twist</div>
-                        <div class="product-price">$423</div>
+                        <div class="product-price">$788</div>
                         <p>Rimowa's classic line, known for its durability and stylish appeal.</p>
                         <button class="add-to-cart">Add to cart</button>
                     </div>
@@ -198,7 +199,7 @@
                 <img src="./asset/3.jpg" class="custom-size">
                     <div class="product-info">
                         <div class="product-title">RIMOWA - Cabin</div>
-                        <div class="product-price">$423</div>
+                        <div class="product-price">$788</div>
                         <p>Rimowa is a premium luggage brand recognized for its<br> quality craftsmanship and stylish aesthetics.</p>
                         <button class="add-to-cart">Add to cart</button>
                     </div>
@@ -209,7 +210,7 @@
                 <img src="./asset/4.jpg" class="custom-size">
                     <div class="product-info">
                         <div class="product-title">KSamsonite - GLOBAL TAorea</div>
-                        <div class="product-price">$423</div>
+                        <div class="product-price">$188</div>
                         <p> This design is intended for comfort during travel,<br> providing support for the neck.</p>
                         <button class="add-to-cart">Add to cart</button>
                     </div>
@@ -220,13 +221,15 @@
                 <img src="./asset/5.jpg" class="custom-size">
                     <div class="product-info">
                         <div class="product-title">Samsonite - ZIRA (29’/ 78 cm)</div>
-                        <div class="product-price">$423</div>
+                        <div class="product-price">$588</div>
                         <p>A large navy blue suitcase with a sleek design.</p>
                         <button class="add-to-cart">Add to cart</button>
                     </div>
             </div>
         </div>
-
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+        </script>
         <footer>
             <img src="./asset/logo_small.png" />
             <table style="width:100%">

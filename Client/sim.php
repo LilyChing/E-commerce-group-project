@@ -8,6 +8,7 @@
     array('path' => 'travel-accessories.php', 'name'=> 'Travel Accessories'),
   ];
   // store session data
+  $_SESSION['productsInCart'] = 0;
   if(!isset($_SESSION['cartList'])){
     $_SESSION['cartList'] = array();
   }
@@ -176,7 +177,7 @@
                 <img src="./asset/sim sg.jpg" class="custom-size">
                     <div class="product-info">
                         <div class="product-title">Singapore</div>
-                        <div class="product-price">$423</div>
+                        <div class="product-price">$188</div>
                         <div>SIM Card - Singapore (1/3/5/7 Days)</div>
                         <p>3/5/10/12GB Data</p>
                         <button class="add-to-cart" >Add to cart</button>
@@ -188,7 +189,7 @@
                 <img src="./asset/sim Italy.jpg" class="custom-size">
                     <div class="product-info">
                         <div class="product-title">Italy</div>
-                        <div class="product-price">$423</div>
+                        <div class="product-price">$188</div>
                         <div>SIM Card - Italy (1/3/5/7 Days)</div>
                         <p>3/5/10/12GB Data</p>
                         <button class="add-to-cart">Add to cart</button>
@@ -200,7 +201,7 @@
                 <img src="./asset/sim japan.jpg" class="custom-size">
                     <div class="product-info">
                         <div class="product-title">Japan</div>
-                        <div class="product-price">$423</div>
+                        <div class="product-price">$88</div>
                         <div>SIM Card - Japan (1/3/5/7 Days)</div>
                         <p>3/5/10/12GB Data</p>
                         <button class="add-to-cart">Add to cart</button>
@@ -212,7 +213,7 @@
                 <img src="./asset/sim korea.jpg" class="custom-size">
                     <div class="product-info">
                         <div class="product-title">Korea</div>
-                        <div class="product-price">$423</div>
+                        <div class="product-price">$88</div>
                         <div>SIM Card - Korea (1/3/5/7 Days)</div>
                         <p>3/5/10/12GB Data</p>
                         <button class="add-to-cart">Add to cart</button>
@@ -224,13 +225,16 @@
                 <img src="./asset/sim thai.jpg" class="custom-size">
                     <div class="product-info">
                         <div class="product-title">Thai</div>
-                        <div class="product-price">$423</div>
+                        <div class="product-price">$58</div>
                         <div>SIM Card - Thai (1/3/5/7 Days)</div>
                         <p>3/5/10/12GB Data</p>
                         <button class="add-to-cart">Add to cart</button>
                     </div>
             </div>
         </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+        </script>
 
         <footer>
             <img src="./asset/logo_small.png" />
