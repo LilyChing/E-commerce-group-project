@@ -3,7 +3,7 @@
   $pages = (object) [
     array('path' => 'index.php', 'name'=> 'Home'),
     array('path' => 'about-us.php', 'name'=> 'About Us'),
-    array('path' => 'wifi-egg.php', 'name'=> 'WiFi Egg / SIM Cards'),
+    array('path' => 'sim.php', 'name'=> 'SIM Cards'),
     array('path' => 'tour.php', 'name'=> 'Travel Services'),
     array('path' => 'travel-accessories.php', 'name'=> 'Travel Accessories'),
   ];
@@ -25,7 +25,7 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" type="text/css" href="all.css">
-  <link rel="stylesheet" type="text/css" href="wifi-egg.css">
+  <link rel="stylesheet" type="text/css" href="sim.css">
 </head>
 
 <body>

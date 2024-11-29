@@ -4,7 +4,7 @@
     array('path' => 'index.php', 'name'=> 'Home'),
     array('path' => 'about-us.php', 'name'=> 'About Us'),
     array('path' => 'sim.php', 'name'=> 'SIM Cards'),
-    array('path' => 'tour.php', 'name'=> 'Tour Services'),
+    array('path' => 'tour.php', 'name'=> 'Travel Services'),
     array('path' => 'travel-accessories.php', 'name'=> 'Travel Accessories'),
   ];
   // store session data
@@ -119,7 +119,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <title>Tour Services</title>
+    <title>SIM card</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="product.css">\
@@ -168,65 +168,65 @@
     <!-- navBar -->
         <div class="product-container">
             <div class="product-card">
-            <h1>Tour</h1>
+            <h1>SIM Cards</h1>
             </div> 
         </div>
         <div class="product-container">
             <div class="product-card">
-                <img src="./asset/Sing.jpg" class="custom-size">
+                <img src="./asset/sim sg.jpg" class="custom-size">
                     <div class="product-info">
                         <div class="product-title">Singapore</div>
                         <div class="product-price">$423</div>
-                        <div>Singapore (1/3/5/7 Days)</div>
-                        <p>Guided tours showcasing major attractions like Marina Bay Sands,<br>Gardens by the Bay, Merlion Park, and Chinatown.</p>
+                        <div>SIM Card - Singapore (1/3/5/7 Days)</div>
+                        <p>3/5/10/12GB Data</p>
                         <button class="add-to-cart" >Add to cart</button>
                     </div>
             </div>
         </div>
         <div class="product-container">
             <div class="product-card">
-                <img src="./asset/Italy.jpg" class="custom-size">
+                <img src="./asset/sim Italy.jpg" class="custom-size">
                     <div class="product-info">
                         <div class="product-title">Italy</div>
                         <div class="product-price">$423</div>
-                        <div>Italy (1/3/5/7 Days)</div>
-                        <p>Guided tours of major cities like Rome, Florence, Venice, and Milan.</p>
+                        <div>SIM Card - Italy (1/3/5/7 Days)</div>
+                        <p>3/5/10/12GB Data</p>
                         <button class="add-to-cart">Add to cart</button>
                     </div>
             </div>
         </div>
         <div class="product-container">
             <div class="product-card">
-                <img src="./asset/Japan.jpg" class="custom-size">
+                <img src="./asset/sim japan.jpg" class="custom-size">
                     <div class="product-info">
                         <div class="product-title">Japan</div>
                         <div class="product-price">$423</div>
-                        <div>Japan (1/3/5/7 Days)</div>
-                        <p>Guided tours of major cities such as Tokyo, Kyoto, and Hiroshima.</p>
+                        <div>SIM Card - Japan (1/3/5/7 Days)</div>
+                        <p>3/5/10/12GB Data</p>
                         <button class="add-to-cart">Add to cart</button>
                     </div>
             </div>
         </div>
         <div class="product-container">
             <div class="product-card">
-                <img src="./asset/Korea.jpg" class="custom-size">
+                <img src="./asset/sim korea.jpg" class="custom-size">
                     <div class="product-info">
                         <div class="product-title">Korea</div>
                         <div class="product-price">$423</div>
-                        <div>Korea (1/3/5/7 Days)</div>
-                        <p>Guided tours of major cities like Seoul, Busan, and Incheon.</p>
+                        <div>SIM Card - Korea (1/3/5/7 Days)</div>
+                        <p>3/5/10/12GB Data</p>
                         <button class="add-to-cart">Add to cart</button>
                     </div>
             </div>
         </div>
         <div class="product-container">
             <div class="product-card">
-                <img src="./asset/Thai.jpg" class="custom-size">
+                <img src="./asset/sim thai.jpg" class="custom-size">
                     <div class="product-info">
                         <div class="product-title">Thai</div>
                         <div class="product-price">$423</div>
-                        <div>Thai (1/3/5/7 Days)</div>
-                        <p>Guided tours of major cities like Bangkok, Chiang Mai, and Phuket.</p>
+                        <div>SIM Card - Thai (1/3/5/7 Days)</div>
+                        <p>3/5/10/12GB Data</p>
                         <button class="add-to-cart">Add to cart</button>
                     </div>
             </div>
@@ -258,7 +258,7 @@
                     <td>Hotline: (852) 3746 0900</td>
             </tr>
             <tr>
-                <td>Tour</td>
+                <td>SIM Cards</td>
                 <td>Payment Method</td>
                 <td>Term & Conditons</td>
                 </tr>

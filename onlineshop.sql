@@ -137,7 +137,7 @@ CREATE TABLE `product_type` (
 
 INSERT INTO `product_type` (`product_type_id`, `product_type`) VALUES
 (1, 'Travel Services'),
-(2, 'SIM Card / Wifi Egg'),
+(2, 'SIM Card'),
 (3, 'Accessories');
 
 --

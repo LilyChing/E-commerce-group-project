@@ -3,7 +3,7 @@
   $pages = (object) [
     array('path' => 'index.php', 'name'=> 'Home'),
     array('path' => 'about-us.php', 'name'=> 'About Us'),
-    array('path' => 'wifi-egg.php', 'name'=> 'WiFi Egg / SIM Cards'),
+    array('path' => 'sim.php', 'name'=> 'SIM Cards'),
     array('path' => 'tour.php', 'name'=> 'Travel Services'),
     array('path' => 'travel-accessories.php', 'name'=> 'Travel Accessories'),
   ];
@@ -239,7 +239,7 @@
     </div>
   </div>
   <div class="container pt-5">
-    <h2 class="h3 pb-3">WiFi  Egg / SIM Cards</h2>
+    <h2 class="h3 pb-3">SIM Cards</h2>
       <div class="row ">
         <?php
         echo productCard(1,"SIM_temp.png","Product Name","Category Name","140");
@@ -327,7 +327,7 @@
             <td>Hotline: (852) 3746 0900</td>
        </tr>
        <tr>
-        <td>Wifi Egg /  SIM Cards</td>
+        <td>SIM Cards</td>
         <td>Payment Method</td>
         <td>Term & Conditons</td>
         </tr>

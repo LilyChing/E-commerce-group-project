@@ -3,7 +3,7 @@
   $pages = (object) [
     array('path' => 'index.php', 'name'=> 'Home'),
     array('path' => 'about-us.php', 'name'=> 'About Us'),
-    array('path' => 'wifi-egg.php', 'name'=> 'WiFi Egg / SIM Cards'),
+    array('path' => 'sim.php', 'name'=> 'SIM Cards'),
     array('path' => 'tour.php', 'name'=> 'Travel Services'),
     array('path' => 'travel-accessories.php', 'name'=> 'Travel Accessories'),
   ];
@@ -81,7 +81,7 @@
     <p>
         Discover the best of travel with Leading Duck Tourism. We offer a variety of tours, including immersive Hong Kong local tours,
          captivating Europe tours, and exciting Asia tours.
-         To enhance your travel experience, we also provide essential travel goods such as WiFi eggs, 
+         To enhance your travel experience, we also provide essential travel goods such as 
          SIM cards, and suitcases. Everything you need for a smooth and enjoyable journey is right here.
     </p>
     <p>    
