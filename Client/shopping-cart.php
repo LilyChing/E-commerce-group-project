@@ -223,6 +223,14 @@
           ?>
         </div>
         <!-- Checkout button -->
+        <script>
+          window.addEventListener('beforeunload', function (event) {
+              // Display a confirmation dialog
+              const confirmationMessage = "Are you sure you want to leave this page?";
+              event.returnValue = confirmationMessage; // Standard way
+              return confirmationMessage; // For older browsers
+          });
+        </script>
         <button type="submit" name="checkout" value="Checkout" class="btn btn-dark w-100 py-2 rounded-pill">Buy Now</button>
       </div>
     </div>
