@@ -118,41 +118,44 @@ foreach ($items as $item) {
 
 mysqli_close($conn);
 
-echo "<br/><h3 style='text-align: center;'>Order Summary</h3> <br/><h5 style='text-align: center;'> for " . $cName . "</h5><br/>";
+echo "<br/><h3 style='text-align: center;'>Order Summary</h3><br/><center><img src='./asset/verify.png' alt='verify' height='58' class='centered-img'></center><br/><h5 style='text-align: center;'> For <b>" . $cName . "</b></h5><br/>";
 echo "<table border='0' style='margin: 0 auto; width: auto;'>";
  echo "<tr>
- <td style='padding-right: 50px;'>Order ID: " . htmlspecialchars($order_id) . "</td>
- <td>Order Time: " . htmlspecialchars($order_time) . "</td>
-</tr>";
+ <td colspan = 2 style='padding-right: 50px;' >Order ID: 00001" . /*htmlspecialchars($order_id) .*/ "</td>
+ <td colspan = 2>Order Time: " . htmlspecialchars($order_time) . "</td>
+</tr></table>";
 
  
  
-echo "<tr>
- <td style='padding-right: 50px;'> <br/> <br/>Item(s) </td>";
+echo "<table border='0' style='margin: 0 auto; width: auto;'>
+<tr>
+ <td style='padding-right: 50px;'> <b>Item(s)</b></td> 
+ <td><b>Unit price</b></td> 
+ <td><b>Qty</b></td>
+ <td>".str_repeat('&nbsp;', 3)."</td> 
+ <td><b>Amount</b></td>";
 $subtotal = 0; //sum of products
 foreach ($items as $index => $item) {
   $quantity = $item['order_qty'];
   $price = $item['product_price'];
 
-  echo "<tr><td style='padding-right: 50px; white-space: nowrap;'>".htmlspecialchars($item['product_name'])."</td>" ."<td>"." $". $price."</td>" ."<td> x ". $quantity."</td>" . "<td>".str_repeat('&nbsp;', 3)."</td>" ."<td>"."= $</td><td>" . number_format($price * $quantity, 2) ."</td><br/></tr>";
+  echo "<tr><td style= 'white-space: nowrap;'>".htmlspecialchars($item['product_name'])."</td>" ."<td>"." $". $price."</td>" ."<td> ". $quantity."</td>" . "<td>".str_repeat('&nbsp;', 3)."</td>" ."<td>"."$" . number_format($price * $quantity, 2) ."</td></tr>";
   $subtotal += $price * $quantity;
  
 } 
 
 
-echo "<tr><td>Subtotal".str_repeat('&nbsp;', 5)."</td><td>$". number_format($subtotal, 2)."</td> <br/></tr>";
+echo "<tr><td>Subtotal".str_repeat('&nbsp;', 5)."</td><td>$". number_format($subtotal, 2)."</td></tr>";
 
 // Total amount
-echo "<tr><td>Shipping".str_repeat('&nbsp;', 5)."</td><td>$".$shipping."<br/><br/></td>";
+echo "<tr><td>Shipping".str_repeat('&nbsp;', 5)."</td><td>$".$shipping."</td></tr>";
 
  $total = $subtotal + $shipping;
-
-echo "<tr><td><b>Total" . str_repeat('&nbsp;', 5) . '</td><td>$' . number_format($total, 2) . "</b></td><br/><br/>";
+echo "<tr><td colspan ='5'><br/>****************************************************************************************</td></tr>";
+echo "<tr><td><b>Total" . str_repeat('&nbsp;', 5) . '</b></td><td><b>$' . number_format($total, 2) . "</b></td><br/><br/>";
 echo "</div>";
 echo "</table>";
 echo "<div style='text-align: center;'> <br/><br/><br/> <h1>Thank you!</h1></div>";
-
-
 
 ?>
 </div>
