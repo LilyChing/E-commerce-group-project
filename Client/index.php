@@ -352,18 +352,18 @@
                     </tr>
                     <tr>
                         <td>
-                        <a target=”_blank” href="https://www.facebook.com/">
+                        <a target="_blank" href="https://www.facebook.com/">
                         <img src="./asset/facebook.png"/> Facebook </a>
                         </td>
                     <tr>
                         <td>
-                            <a target=”_blank” href="https://www.intagram.com/">
+                            <a target="_blank" href="https://www.intagram.com/">
                             <img src="./asset/intagram.png"/> Intagram</a>
                         </td>
                     </tr>
                     <tr> 
                         <td>
-                            <a target=”_blank” href="https://www.youtube.com/">
+                            <a target="_blank" href="https://www.youtube.com/">
                             <img src="./asset/youtube.png"/> Youtube</a> 
                         </td>
                     </tr>       
