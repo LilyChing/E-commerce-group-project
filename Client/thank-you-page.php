@@ -62,6 +62,7 @@
     </div>
   </nav>
   <!-- Receipt body -->
+  <div class ="container">
 <?php
 //MySQL
 $SQLservername = "localhost";
@@ -100,7 +101,7 @@ $insert_order_info_sql = "INSERT INTO order_info (cName, cNumber, cEmail, sName,
         VALUES (\"$cName\", \"$cNumber\", \"$cEmail\", \"$sName\", \"$sAddress\", \"$sCity\", \"$sCountry\", \"$sPostcode\", \"$payment\")";
 if (mysqli_query($conn, $insert_order_info_sql)) {
   $order_id = mysqli_insert_id($conn);
-  echo "order_info created successfully";
+  // echo "order_info created successfully";
 } else {
   echo "Error: " . $insert_order_info_sql . "<br>" . mysqli_error($conn);
 }
@@ -109,7 +110,7 @@ foreach ($items as $item) {
   $insert_order_details_sql = "INSERT INTO order_details (order_id, product_id, order_qty) 
         VALUES ($order_id, ".$item['product_id'].", ".$item['order_qty'].")";
   if (mysqli_query($conn, $insert_order_details_sql)) {
-    echo "order_details created successfully";
+    // echo "order_details created successfully";
   } else {
     echo "Error: " . $insert_order_details_sql . "<br>" . mysqli_error($conn);
   }
@@ -117,31 +118,44 @@ foreach ($items as $item) {
 
 mysqli_close($conn);
 
-echo "<h1>Order Summary</h1>"." for ".$cName."<br/><br/>";
- echo "<table border='0'>";
-echo "<tr><td>"."Order ID : ".$order_id."</td>"."<td>"."Order Time :".$order_time."</td></tr>";
- echo "</table>"."<br/><br/>";
-echo "Item(s)<br/><br/>";
+echo "<br/><h3 style='text-align: center;'>Order Summary</h3> <br/><h5 style='text-align: center;'> for " . $cName . "</h5><br/>";
+echo "<table border='0' style='margin: 0 auto; width: auto;'>";
+ echo "<tr>
+ <td style='padding-right: 50px;'>Order ID: " . htmlspecialchars($order_id) . "</td>
+ <td>Order Time: " . htmlspecialchars($order_time) . "</td>
+</tr>";
+
+ 
+ 
+echo "<tr>
+ <td style='padding-right: 50px;'> <br/> <br/>Item(s) </td>";
 $subtotal = 0; //sum of products
 foreach ($items as $index => $item) {
   $quantity = $item['order_qty'];
   $price = $item['product_price'];
-  echo "<table border='0'>";
-  echo "<tr><td>".htmlspecialchars($item['product_name'])."</td>" ."<td>"." $". $price."</td>" ."<td>". $quantity."</td>" . "<td>".str_repeat('&nbsp;', 3)."</td>" ."<td>"."= $" . number_format($price * $quantity, 2) ."</td></tr>" . "<br/>";
-  $subtotal += $price * $quantity;
-  echo "</table>";
-}
 
-echo "Subtotal".str_repeat('&nbsp;', 5)."$". number_format($subtotal, 2)."<br/><br/>";
+  echo "<tr><td style='padding-right: 50px; white-space: nowrap;'>".htmlspecialchars($item['product_name'])."</td>" ."<td>"." $". $price."</td>" ."<td> x ". $quantity."</td>" . "<td>".str_repeat('&nbsp;', 3)."</td>" ."<td>"."= $</td><td>" . number_format($price * $quantity, 2) ."</td><br/></tr>";
+  $subtotal += $price * $quantity;
+ 
+} 
+
+
+echo "<tr><td>Subtotal".str_repeat('&nbsp;', 5)."</td><td>$". number_format($subtotal, 2)."</td> <br/></tr>";
 
 // Total amount
-echo "Shipping".str_repeat('&nbsp;', 5)."$".$shipping."<br/><br/>";
- $total = $subtotal + $shipping;
-  echo"<hr/>";
-  echo"<b>Total</b>" . "<b>". str_repeat('&nbsp;', 5).'$'.number_format($total, 2) . "</b><br/><br/>";
+echo "<tr><td>Shipping".str_repeat('&nbsp;', 5)."</td><td>$".$shipping."<br/><br/></td>";
 
-echo "<h1>Thank you!</h1>";
+ $total = $subtotal + $shipping;
+
+echo "<tr><td><b>Total" . str_repeat('&nbsp;', 5) . '</td><td>$' . number_format($total, 2) . "</b></td><br/><br/>";
+echo "</div>";
+echo "</table>";
+echo "<div style='text-align: center;'> <br/><br/><br/> <h1>Thank you!</h1></div>";
+
+
+
 ?>
+</div>
 <footer>
   <hr/>
     <div class ="m-5">
