@@ -7,8 +7,10 @@
     array('path' => 'tour.php', 'name'=> 'Tour Services'),
     array('path' => 'travel-accessories.php', 'name'=> 'Travel Accessories'),
   ];
-  // store session data
-  $_SESSION['productsInCart'] = 0;
+  // Clear session data
+  if(isset($_SESSION['cartList'])){
+    $_SESSION['cartList'] = array();
+  }
 ?>
 <!DOCTYPE html>
 <html>
@@ -121,7 +123,7 @@ mysqli_close($conn);
 echo "<br/><h3 style='text-align: center;'>Order Summary</h3><br/><center><img src='./asset/verify.png' alt='verify' height='58' class='centered-img'></center><br/><h5 style='text-align: center;'> For <b>" . $cName . "</b></h5><br/>";
 echo "<table border='0' style='margin: 0 auto; width: auto;'>";
  echo "<tr>
- <td colspan = 2 style='padding-right: 50px;' >Order ID: 00001" . /*htmlspecialchars($order_id) .*/ "</td>
+ <td colspan = 2 style='padding-right: 50px;' >Order ID: " . htmlspecialchars($order_id) ."</td>
  <td colspan = 2>Order Time: " . htmlspecialchars($order_time) . "</td>
 </tr></table>";
 
